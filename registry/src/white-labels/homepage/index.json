@@ -1,0 +1,13 @@
+{
+	"#$schema": "TODO: configuration contract via JSON Schema",
+	"id": "homepage",
+	"version": "0.1.0",
+	"renderingMode": "server",
+	"apis": {
+		"renderer": "http://localhost:3030/",
+		"bff": "http://localhost:3031/"
+	},
+	"metadata": {
+		"title": "Hello from homepage"
+	}
+}

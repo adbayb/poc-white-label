@@ -1,0 +1,7 @@
+{
+	"#$schema": "TODO: configuration contract via JSON Schema",
+	"theme": {
+		"logo": "https://assets.meilleursagents.com/web/common/images/202105/ma-logo.svg",
+		"color": "#1432BE"
+	}
+}

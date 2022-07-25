@@ -1,0 +1,5 @@
+packages:
+  - "application/*"
+  - "host"
+  - "registry"
+  - "services/*"
