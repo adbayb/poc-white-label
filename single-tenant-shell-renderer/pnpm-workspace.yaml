@@ -1,6 +1,0 @@
-packages:
-  - "application"
-  - "bff"
-  - "downstream-services"
-  - "framework/*"
-  - "renderers/*"

@@ -1,0 +1,27 @@
+{
+  "name": "@single-tenant-renderer/white-label-renderer-brand-blue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "watch": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "verify": "next lint"
+  },
+  "dependencies": {
+    "@framework/design-system": "workspace:*",
+    "@single-tenant-renderer/white-label-application": "workspace:*",
+    "@single-tenant-renderer/white-label-bff": "workspace:*",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.6.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "typescript": "4.7.4"
+  }
+}

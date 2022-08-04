@@ -1,7 +1,0 @@
-{
-	"#$schema": "TODO: configuration contract via JSON Schema",
-	"theme": {
-		"logo": "https://www.lesavisimmo.com/Content/img/seloger-logo.png",
-		"color": "#E00034"
-	}
-}
