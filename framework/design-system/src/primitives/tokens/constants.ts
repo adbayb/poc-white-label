@@ -1,0 +1,45 @@
+export const DEFAULT_THEME = Object.freeze({
+	breakpoints: Object.freeze({
+		small: 0,
+		large: 800,
+	}),
+	colors: Object.freeze({
+		"accent-primary": "#1432be",
+		"accent-secondary": "#777777",
+		"accent-tertiary": "#ebedf7",
+		"neutral-white": "#ffffff",
+		"neutral-black": "#000000",
+		"neutral-lightblack": "#333333",
+		"neutral-gray": "#f9f9f9",
+		"neutral-lightgray": "#cccccc",
+		"neutral-darkgray": "#d8d8d8",
+	}),
+	radius: Object.freeze({
+		"radius-0": 0,
+		"radius-2": 2,
+		"radius-8": 8,
+	}),
+	shadows: Object.freeze({
+		"shadow-0": "0px 0px 0px rgba(0, 0, 0, 0)",
+		"shadow-6": "0px 1px 6px rgba(0, 0, 0, 0.25)",
+	}),
+	spacings: Object.freeze({
+		"spacing-0": 0,
+		"spacing-4": 4,
+		"spacing-6": 6,
+		"spacing-10": 10,
+		"spacing-12": 12,
+		"spacing-16": 16,
+		"spacing-22": 22,
+		"spacing-24": 24,
+		"spacing-32": 32,
+		"spacing-36": 36,
+		"spacing-44": 44,
+	}),
+	texts: Object.freeze({
+		"text-0": 0,
+		"text-14": 14,
+		"text-16": 16,
+		"text-18": 18,
+	}),
+});

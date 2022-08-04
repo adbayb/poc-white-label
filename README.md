@@ -5,13 +5,14 @@ A white-label solution proposal
 ## Scope
 
 For the sake of experimentation, a simple white-label product version will be implemented.
-It consists of displaying a welcome page into two brands (arbitrary called `brandA` and `brandB`) with following requirements:
+It consists of displaying a welcome page into two brands (arbitrary called `brand-red` and `brand-blue`) with following requirements:
 
 - [ ] Shared logic: a common business logic including metadata, content & feature
 - [ ] Brand-specific configuration: UI with logo and button
 - [ ] Brand-specific configuration: metadata with the title tag
 - [ ] Brand-specific configuration: link to a specific page
 - [ ] Brand-specific configuration: feature toggle
+- [ ] SSR friendly
 
 ## Architecture
 
@@ -53,7 +54,7 @@ sequenceDiagram
     participant WA as White-label application [Component]
     participant WB as White-label data provider [BFF]
     participant D as Dowstream services
-    H->>+WR: route(ParametersFromBrand: { hostID: 'brandA' | 'brandB' | '...', env: 'prod' | 'staging', ... })
+    H->>+WR: route(ParametersFromBrand: { hostID: 'brand-red' | 'brand-blue' | '...', env: 'prod' | 'staging', ... })
     # Request parameters could be managed through environment variables
     WR->>+HR: requestBrandConfiguration(parametersFromBrand)
     HR-->>-WR: Result<BrandConfigurationContract: { hostID, theme, links, meta, ... }>

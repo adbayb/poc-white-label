@@ -1,5 +1,6 @@
 packages:
-  - "application/*"
-  - "host"
-  - "registry"
-  - "services/*"
+  - "application"
+  - "bff"
+  - "downstream-services"
+  - "framework/*"
+  - "renderers/*"
