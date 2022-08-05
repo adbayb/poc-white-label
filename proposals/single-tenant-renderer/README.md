@@ -2,8 +2,8 @@
 
 ## Pros
 
-- The most flexibility to introduce specificities for a given brand (can be key to secure a release with no mature enough functional requirements)
-- The structure favors separation of concerns between the core and brand logic
+- The most flexibility to introduce specificities for a given brand: all white-label application can be consumed and composed freely within each renderer
+- The structure enables exit-door from the Next.js runtime (the application is isolated from the renderer)
 
 ## Cons
 
