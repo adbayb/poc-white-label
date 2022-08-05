@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "watch": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "verify": "next lint"
   },
   "dependencies": {
+    "@framework/design-system": "workspace:*",
     "@single-tenant-component/shells": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",

@@ -1,8 +1,4 @@
 export const DEFAULT_THEME = Object.freeze({
-	breakpoints: Object.freeze({
-		small: 0,
-		large: 800,
-	}),
 	colors: Object.freeze({
 		"accent-primary": "#1432be",
 		"accent-secondary": "#777777",

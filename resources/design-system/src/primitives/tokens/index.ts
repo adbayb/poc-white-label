@@ -20,7 +20,6 @@ export type SpacingTokenName =
 export type TextTokenName = "text-0" | "text-14" | "text-24" | "text-36";
 
 export type TokenValue = {
-	breakpoints: Readonly<Record<BreakpointTokenName, number>>;
 	colors: Readonly<Record<ColorTokenName, string>>;
 	radius: Readonly<Record<RadiusTokenName, number>>;
 	shadows: Readonly<Record<ShadowTokenName, string>>;

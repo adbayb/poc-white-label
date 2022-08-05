@@ -22,6 +22,9 @@ const createConfig = (target) => {
 		external: [
 			...Object.keys(pkg.peerDependencies),
 			...Object.keys(pkg.devDependencies),
+			"next/head",
+			"react/jsx-runtime",
+			"react/jsx-dev-runtime",
 		],
 		plugins: [
 			nodeResolve({ extensions: [".ts", ".tsx", ".js", ".jsx", ".json"] }),
