@@ -7,34 +7,20 @@ import pkg from "./package.json";
 
 const isDev = process.argv.includes("--watch");
 
-const createConfig = (target = "react") => {
-	let output;
-
-	switch (target) {
-		case "vue":
-			output = {
-				file: pkg["exports"]["./vue"]["import"]["default"],
-				format: "es",
-				sourcemap: isDev,
-			};
-
-			break;
-		case "react":
-		default:
-			output = {
-				file: pkg["exports"]["."]["import"]["default"],
-				format: "es",
-				sourcemap: isDev,
-			};
-
-			break;
-	}
+const createConfig = (target) => {
+	const importData = pkg["exports"][`./${target}`]["import"];
+	const input = importData.source;
+	const output = {
+		file: importData.default,
+		format: "es",
+		sourcemap: isDev,
+	};
 
 	return {
-		input: pkg.source,
+		input,
 		output,
 		external: [
-			...Object.keys(pkg.optionalDependencies),
+			...Object.keys(pkg.peerDependencies),
 			...Object.keys(pkg.devDependencies),
 		],
 		plugins: [
@@ -49,4 +35,4 @@ const createConfig = (target = "react") => {
 	};
 };
 
-export default [createConfig(), createConfig("vue")];
+export default [createConfig("brand-blue"), createConfig("brand-red")];

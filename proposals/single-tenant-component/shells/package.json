@@ -1,28 +1,28 @@
 {
-	"name": "@framework/design-system",
+	"name": "@single-tenant-component/shells",
 	"private": true,
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		"./brand-blue": {
 			"import": {
-				"source": "./src/brand-blue",
-				"types": "./dist/types/index.d.ts",
+				"source": "./src/brand-blue/index.tsx",
+				"types": "./dist/brand-blue/index.d.ts",
 				"default": "./dist/brand-blue.js"
 			}
 		},
 		"./brand-red": {
 			"import": {
-				"source": "./src/brand-red",
-				"types": "./dist/types/index.d.ts",
+				"source": "./src/brand-red/index.tsx",
+				"types": "./dist/brand-red/index.d.ts",
 				"default": "./dist/brand-red.js"
 			}
 		}
 	},
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "quickbundle watch --serve public/index.html",
-		"build": "quickbundle build",
-		"watch": "quickbundle watch"
+		"start": "pnpm watch",
+		"build": "rollup -c",
+		"watch": "pnpm build -w"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "22.0.2",

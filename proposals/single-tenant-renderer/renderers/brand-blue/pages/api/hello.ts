@@ -1,3 +1,3 @@
-import { readContent } from "@single-tenant-renderer/white-label-bff"
+import { readContent } from "@single-tenant-renderer/white-label-bff";
 
-export default readContent
+export default readContent;
