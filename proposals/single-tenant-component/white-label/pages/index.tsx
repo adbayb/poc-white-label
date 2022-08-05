@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
-// @ts-expect-error fix exports typing
-import { Shell } from "@single-tenant-component/shells/brand-red";
-import { Button } from "@framework/design-system"
+import { Button } from "@framework/design-system";
+import dynamic from 'next/dynamic';
+
+const Shell = dynamic<any>(() => import(`@single-tenant-component/shells/${process.env.BRAND_ID}`).then((mod) => mod.Shell), {
+  loading: () => <span>loading</span>,
+})
 
 const Home: NextPage = () => {
 	return (

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "watch": "next dev",
+    "watch": "pnpm watch:brand-red",
+    "watch:brand-blue": "BRAND_ID=brand-blue next dev",
+    "watch:brand-red": "BRAND_ID=brand-red next dev",
     "build": "next build",
     "start": "next start",
     "verify": "next lint"

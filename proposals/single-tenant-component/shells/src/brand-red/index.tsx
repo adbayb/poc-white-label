@@ -2,6 +2,8 @@ import Head from "next/head";
 import { DesignSystemProvider, TokenValue } from "@framework/design-system";
 import { ShellProps } from "../types";
 
+export type { ShellProps };
+
 export const Shell = ({ children }: ShellProps) => {
 	return (
 		<>
