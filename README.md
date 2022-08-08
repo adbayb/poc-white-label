@@ -12,6 +12,7 @@ It consists of displaying a welcome page into two brands (arbitrary called `bran
 - [ ] Brand-specific configuration: metadata with the title tag
 - [ ] Brand-specific configuration: link to a specific page
 - [ ] Brand-specific configuration: feature toggle
+- [ ] Brand-specific configuration: serve specific assets (robots.txt)
 - [ ] SSR friendly
 
 ## Architecture

@@ -1,4 +1,3 @@
-import { css } from "coulis";
 import {
 	ColorTokenName,
 	RadiusTokenName,
@@ -138,7 +137,7 @@ export const mapStyleToPlatformAttributes = (
 		flexDirection: direction,
 		flexGrow: growFactor,
 		flexShrink: shrinkFactor,
-	} as Parameters<typeof css>[0];
+	};
 };
 
 const mapTokenToPlatformAttributes = <

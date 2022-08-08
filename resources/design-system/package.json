@@ -7,15 +7,22 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "quickbundle watch --serve public/index.html",
-		"build": "quickbundle build",
-		"watch": "quickbundle watch"
+		"start": "pnpm watch",
+		"build": "rollup -c",
+		"watch": "pnpm build -w"
 	},
 	"devDependencies": {
+		"@babel/core": "7.18.10",
+		"@rollup/plugin-commonjs": "22.0.2",
+		"@rollup/plugin-node-resolve": "13.3.0",
+		"@rollup/plugin-typescript": "8.3.4",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"rollup": "2.77.2",
+		"rollup-plugin-filesize": "9.1.2",
+		"tslib": "2.4.0",
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
@@ -23,6 +30,6 @@
 		"react-dom": ">=18.0.0"
 	},
 	"dependencies": {
-		"coulis": "0.3.0"
+		"@emotion/react": "11.10.0"
 	}
 }

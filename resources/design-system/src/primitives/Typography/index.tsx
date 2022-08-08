@@ -23,7 +23,6 @@ export const Typography = ({
 	const token = useToken();
 	const ellipsisProps = mapMaxLinesToStyleProps(numberOfLines);
 	const isStrongVariation = variation === "strong";
-	// @note: strong tag to foster semantic html
 	const Element = isStrongVariation ? "strong" : "span";
 
 	return (
@@ -31,7 +30,6 @@ export const Typography = ({
 			{...restProps}
 			as={
 				<Element
-					// @note: title is set with ellipsis to let screen readers retrieve the original description (another alternative could be to use `aria-described-by`)
 					title={ellipsisProps ? String(children) : undefined}
 					style={{
 						...ellipsisProps,

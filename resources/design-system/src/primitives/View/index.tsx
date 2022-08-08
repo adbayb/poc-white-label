@@ -1,9 +1,10 @@
-import { css } from "coulis";
+/** @jsxImportSource @emotion/react */
+import { jsx } from "@emotion/react";
 import {
 	ElementType,
+	FunctionComponentElement,
 	ReactElement,
 	ReactNode,
-	cloneElement,
 	forwardRef,
 	isValidElement,
 } from "react";
@@ -23,13 +24,6 @@ export interface ViewProps extends AccessibilityProps, StyleProps {
 	id?: string;
 }
 
-/**
- * The base Lego element: all other components are built upon it.
- *
- * Note regarding the platform prefix on mappers: for now, the only supported platform is web
- * but we can imagine to support later native apps (through react-native or whatever framework).
- * Decoupling properties from the rendering allows to adapt more easily future platform target needs.
- */
 export const View = forwardRef<ViewRef, ViewProps>(function View(
 	{
 		as: Element = "div",
@@ -44,36 +38,48 @@ export const View = forwardRef<ViewRef, ViewProps>(function View(
 	ref
 ) {
 	const token = useToken();
+	const styles = mapStyleToPlatformAttributes(restProps, token);
 	const accessibilityProps = mapAccessiblityToPlatformAttributes({
 		accessibilityDescribedBy,
 		accessibilityLabel,
 		accessibilityRole,
 		tabIndex,
 	});
-	const className = css(mapStyleToPlatformAttributes(restProps, token));
 	const commonProps = {
 		...accessibilityProps,
-		className,
 		children,
 		id,
 	};
 
 	if (isValidElement(Element)) {
-		return cloneElement(Element, {
-			...commonProps,
-			className: Element.props.className
-				? [className, Element.props.className].join(" ")
-				: className,
-			ref,
-		});
+		return cloneElement(
+			Element as FunctionComponentElement<Record<string, unknown>>,
+			{
+				...commonProps,
+				css: styles,
+				ref,
+			}
+		);
 	}
 
 	return (
 		<Element
-			ref={ref}
 			{...commonProps}
+			css={styles}
+			ref={ref}
 		>
 			{children}
 		</Element>
 	);
 });
+
+const cloneElement = <Props extends Record<string, unknown>>(
+	element: FunctionComponentElement<Props>,
+	props: Props
+) =>
+	jsx(element.type, {
+		key: element.key,
+		ref: element.ref,
+		...element.props,
+		...props,
+	});
