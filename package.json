@@ -23,15 +23,10 @@
 		"verify": "turbo run verify",
 		"fix": "turbo run fix",
 		"test": "turbo run test",
-		"start:single-tenant-component": "turbo run start --filter=@single-tenant-component/*",
-		"build:single-tenant-component": "turbo run build --filter=@single-tenant-component/*",
-		"watch:single-tenant-component": "turbo run watch --filter=@single-tenant-component/*",
+		"start:single-tenant-component:brand-red": "BRAND_ID=brand-red turbo run watch --filter=@single-tenant-component/*",
+		"start:single-tenant-component:brand-blue": "BRAND_ID=brand-blue turbo run watch --filter=@single-tenant-component/*",
 		"start:single-tenant-renderer": "turbo run start --filter=@single-tenant-renderer/*",
-		"build:single-tenant-renderer": "turbo run build --filter=@single-tenant-renderer/*",
-		"watch:single-tenant-renderer": "turbo run watch --filter=@single-tenant-renderer/*",
-		"start:multi-tenant": "turbo run start --filter=@multi-tenant/*",
-		"build:multi-tenant": "turbo run build --filter=@multi-tenant/*",
-		"watch:multi-tenant": "turbo run watch --filter=@multi-tenant/*"
+		"start:multi-tenant": "turbo run start --filter=@multi-tenant/*"
 	},
 	"devDependencies": {
 		"@adbayb/scripts": "0.14.0",
