@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "pnpm watch",
     "watch": "next dev",
     "build": "next build",
-    "start": "next start",
+    "serve": "next start",
     "verify": "next lint"
   },
   "dependencies": {

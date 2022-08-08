@@ -1,23 +1,36 @@
 {
 	"name": "@single-tenant-component/shells",
 	"private": true,
-	"types": "./dist/types/index.d.ts",
 	"exports": {
 		"./brand-blue": {
 			"import": {
-				"source": "./src/brand-blue/index.tsx",
 				"types": "./dist/brand-blue/index.d.ts",
+				"source": "./src/brand-blue/index.tsx",
 				"default": "./dist/brand-blue.js"
 			},
-			"require": "./dist/brand-blue.js"
+			"require": {
+				"types": "./dist/brand-blue/index.d.ts",
+				"source": "./src/brand-blue/index.tsx",
+				"default": "./dist/brand-blue.js"
+			}
 		},
 		"./brand-red": {
 			"import": {
-				"source": "./src/brand-red/index.tsx",
 				"types": "./dist/brand-red/index.d.ts",
+				"source": "./src/brand-red/index.tsx",
 				"default": "./dist/brand-red.js"
 			},
-			"require": "./dist/brand-red.js"
+			"require": {
+				"types": "./dist/brand-red/index.d.ts",
+				"source": "./src/brand-red/index.tsx",
+				"default": "./dist/brand-red.js"
+			}
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"brand-blue": ["./dist/brand-blue/index.d.ts"],
+			"brand-red": ["./dist/brand-red/index.d.ts"]
 		}
 	},
 	"scripts": {
@@ -45,5 +58,10 @@
 		"next": ">=12.0.0",
 		"react": ">=18.0.0",
 		"react-dom": ">=18.0.0"
+	},
+	"eslintConfig": {
+		"rules": {
+			"import/no-default-export": "off"
+		}
 	}
 }
