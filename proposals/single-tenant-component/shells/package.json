@@ -8,14 +8,16 @@
 				"source": "./src/brand-blue/index.tsx",
 				"types": "./dist/brand-blue/index.d.ts",
 				"default": "./dist/brand-blue.js"
-			}
+			},
+			"require": "./dist/brand-blue.js"
 		},
 		"./brand-red": {
 			"import": {
 				"source": "./src/brand-red/index.tsx",
 				"types": "./dist/brand-red/index.d.ts",
 				"default": "./dist/brand-red.js"
-			}
+			},
+			"require": "./dist/brand-red.js"
 		}
 	},
 	"scripts": {
