@@ -2,7 +2,7 @@
 
 A white-label solution proposal
 
-## Scope
+# Scope
 
 For the sake of experimentation, a simple white-label product version will be implemented.
 It consists of displaying a welcome page into two brands (arbitrary called `brand-red` and `brand-blue`) with following requirements:
@@ -15,51 +15,86 @@ It consists of displaying a welcome page into two brands (arbitrary called `bran
 - [ ] Brand-specific configuration: serve specific assets (robots.txt)
 - [ ] SSR friendly
 
-## Architecture
+# Architecture
 
-### Overview
+## Overview
 
-Before describing each integration proposal, let's see what are the main technical building blocks (containers and components) shared between proposals:
+Before describing each integration proposal, let's see what are the main building blocks shared between proposals:
 
-Four main containers compose the integration framework:
+Four containers compose the integration system:
 
-- Host: The brand application consuming the white-label
-- Host registry: Global brand registry providing brand-aware configurations (HTML, metadata, theme, ...). It adapts the white-label experience with brand requirements
-- White-label: The white-label product to adapt and integrate into an host target
-- Downstream services: Provide needed data from a given source (eg. backend service, authorization server, third party service like feature flag system, ...)
+- **Tenant**: The brand application hosting the white-label application
+- **Shell**: The integration orchestrator. Its main responsibility is to enable the white-label application integration into the tenant in the best possible conditions (eg. retrieving the white-label logic, decorating it with tenant-aware configuration, managing its loading lifecycle, ...)
+- **Registry**: Global white-label registry to discover and serve critical white-label resources (by critical, we mean all resources (URL, metadata, static files) needed to display the white-label)
+- **White-label**: The white-label application to adapt and integrate into a tenant
+- **Downstream services**: Provide needed data from a given source (eg. backend service, authorization server, third party service like feature flag system, ...)
 
-Let's zoom into the white-label container by listing its components:
+Let's zoom into the white-label container by enumerating its components:
 
-- Renderer: Top-level wrapper managing the white-label application rendering (including brand configuration consumption)
-- Application: Implement the core business logic (shared between brands)
-- Data provider: Manage communication with external systems (ACL) and deliver the consolidated data to the requestor
+- **Renderer**: Top-level wrapper managing the white-label rendering (including brand configuration consumption)
+- **Application**: Core business logic implementation (shared across brands)
+- **BFF (Backend For Frontend)**: Manage communication with external systems and deliver the consolidated data to the requestor. It acts as an ACL and consolidated data provider for the white-label needs
 
-### Multi-tenant architecture
+## Multi-tenant architecture
 
-Single shared renderer between brands configurable via a registry.
+One white-label instance shared across tenants (a single software runtime serves multiple customers).
 
-##### Component diagram
+#### Component diagram
 
-<img alt="Component diagram for multi-tenant proposal" src="https://user-images.githubusercontent.com/10498826/182594053-786d4fb3-d0ec-470d-bdf2-c57e6d71e47f.png">
+![Component diagram for multi-tenant proposal](https://user-images.githubusercontent.com/10498826/183674693-f89f8222-1b46-4bff-8c06-3f81ee74e2b5.png)
 
-##### Sequence diagram
+#### Sequence diagram
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant H as Host
+    participant S as Shell
+    participant WReg as Registry [CDN]
+    participant WRen as White-label renderer (including application) [Server]
+    participant WBff as White-label BFF [Server]
+    participant D as Dowstream services
+    H->>+S: route(RequestParameters: { id: 'white-label-id', hostId: 'brand-blue' | 'brand-red', env: 'prod' | 'staging', ... })
+    # The route operation should be defined technically depending on the performance budget (SEO constraint, ...): build-time (package consumption) / run-time (dynamic ESM loading) or server-side composition (reverse proxy, server side includes, ...)
+    # Request parameters could be managed through environment variables
+    S->>+WReg: requestMetadata(requestParameters: RequestParameters)
+    WReg-->>-S: Result<Metadata: { id, version, apiLinks: { renderer, bff, ... },  renderingMode: 'server' | 'client', ... }>
+    S->>+WReg: requestStaticFiles(requestParameters: RequestParameters)
+    WReg-->>-S: Result<StaticFiles>
+    opt renderingMode is 'server'
+        S->>+WRen: render(hostId)
+        WRen->>+WBff: requestData()
+        loop For as many services as needed
+            WBff->>+D: requestData()
+            D-->>-WBff: Result<DataFromAGivenService>
+        end
+        WBff-->>-WRen: Result<ConsolidatedData>
+        WRen->>+WRen: renderSSR(consolidatedData)
+        WRen-->>-WRen: Result<PageFragment: { meta, content }>
+        WRen-->>-S: Result<PageFragment>
+        activate S
+    end
+    S->>+WBff: requestData()
+    loop For as many services as needed
+        WBff->>+D: requestData()
+        D-->>-WBff: Result<DataFromAGivenService>
+    end
+    WBff-->>-S: Result<ConsolidatedData>
+    S-->>-H: Result<Mounted>
+```
 
 ```mermaid
 sequenceDiagram
     autonumber
     participant H as Host
     participant WR as White-label renderer [Server for SSR / CDN for CSR]
-    # Dedicated component since the composition host-side are common concerns across white-labels (including white-label lifecycle management).
-    # In any case, the shell will be needed, at least, to manage white-label lifecycle (mount/unmount/error/loading) and forward the brand theme (design tokens) to the white-label (it's not the white-label responsibility to retrieve the brand theme, its sole responsibility will be to open its API to accept the theme affectation from the shell).
     participant HR as Host registry [CDN]
     participant WA as White-label application [Component]
     participant WB as White-label data provider [BFF]
     participant D as Dowstream services
     H->>+WR: route(ParametersFromBrand: { hostID: 'brand-red' | 'brand-blue' | '...', env: 'prod' | 'staging', ... })
-    # Request parameters could be managed through environment variables
     WR->>+HR: requestBrandConfiguration(parametersFromBrand)
     HR-->>-WR: Result<BrandConfigurationContract: { hostID, theme, links, meta, ... }>
-    # The integration operation should be defined technically depending on the performance budget (SEO constraint, ...): build-time (package consumption) / run-time (dynamic ESM loading) or server-side composition (reverse proxy, server side includes, ...)
     WR->>WA: import()
     opt renderingMode is 'server'
         WR->>+WB: getServerSideProps(hostID)
@@ -82,8 +117,8 @@ sequenceDiagram
     WA-->>-H: Result<Mounted>
 ```
 
-### Single-tenant architecture
+## Single-tenant architecture
 
-Multi renderers (one per brand to manage each one specificity).
+One white-label instance per tenant (a single software runtime serves a single customer).
 
-<img alt="Component diagram for multi-tenant proposal" src="https://user-images.githubusercontent.com/10498826/182627311-72f72069-fc2f-4e77-8ab5-0cd47ca8e9fb.png">
+![Component diagram for single-tenant proposals](https://user-images.githubusercontent.com/10498826/183674508-c50ffe2f-e1b1-454b-9f46-dd34c83c1923.png)

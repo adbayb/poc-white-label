@@ -1,5 +1,7 @@
 import { createShell } from "../createShell";
 
+import "./public/logo.png";
+
 export default createShell({
 	title: "brand-red",
 	description: "👋 from brand-red",

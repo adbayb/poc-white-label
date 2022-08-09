@@ -3,6 +3,7 @@ import typescript from "@rollup/plugin-typescript";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import filesize from "rollup-plugin-filesize";
+import smartAsset from "rollup-plugin-smart-asset";
 import pkg from "./package.json";
 
 const isDev = process.argv.includes("--watch");
@@ -33,6 +34,10 @@ const createConfig = (target) => {
 				outputToFilesystem: true,
 			}),
 			commonjs(),
+			smartAsset({
+				emitFiles: true,
+				url: "copy",
+			}),
 			!isDev && filesize(),
 		].filter(Boolean),
 	};
