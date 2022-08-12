@@ -1,8 +1,8 @@
 import { createShell } from "../createShell";
 
 export default createShell({
-	title: "brand-red",
-	description: "👋 from brand-red",
+	title: "brand-blue",
+	description: "👋 from brand-blue",
 	theme: Object.freeze({
 		colors: Object.freeze({
 			"accent-primary": "#1432be",

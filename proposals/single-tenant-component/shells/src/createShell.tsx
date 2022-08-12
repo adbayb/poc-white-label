@@ -26,7 +26,7 @@ export const createShell = (configuration: ShellConfiguration) => {
 				<DesignSystemProvider theme={configuration.theme}>
 					{props.children}
 				</DesignSystemProvider>
-				<footer>brand-blue</footer>
+				<footer>{configuration.description}</footer>
 			</>
 		);
 	};

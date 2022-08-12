@@ -15,7 +15,8 @@
 			"outputs": []
 		},
 		"clean": {
-			"outputs": []
+			"outputs": [],
+			"cache": false
 		},
 		"start": {
 			"cache": false
