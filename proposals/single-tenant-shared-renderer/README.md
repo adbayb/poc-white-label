@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>🧪 Single-tenant architecture proposal with multi-tenant codebase</h1>
+    <h1>🧪 Single-tenant architecture proposal (with multi-tenant codebase)</h1>
     <strong>One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase</strong>
 </div>
 <br>
@@ -16,10 +16,10 @@ pnpm i
 2️⃣ Try it by running:
 
 ```bash
-# For the `brand-blue` application
-start:single-tenant-component:brand-blue
-# For the `brand-red` application
-start:single-tenant-component:brand-red
+# For the `brand-blue` application:
+pnpm start:single-tenant-shared-renderer:brand-blue
+# For the `brand-red` application:
+pnpm start:single-tenant-shared-renderer:brand-red
 ```
 
 <br>

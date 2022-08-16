@@ -23,9 +23,10 @@
 		"verify": "turbo run verify",
 		"fix": "turbo run fix",
 		"test": "turbo run test",
-		"start:single-tenant-component:brand-red": "BRAND_ID=brand-red turbo run watch --filter=@single-tenant-component/*",
-		"start:single-tenant-component:brand-blue": "BRAND_ID=brand-blue turbo run watch --filter=@single-tenant-component/*",
-		"start:single-tenant-renderer": "turbo run start --filter=@single-tenant-renderer/*",
+		"build": "turbo run build",
+		"start:single-tenant-shared-renderer:brand-red": "BRAND_ID=brand-red turbo run watch --filter=@single-tenant-shared-renderer/*",
+		"start:single-tenant-shared-renderer:brand-blue": "BRAND_ID=brand-blue turbo run watch --filter=@single-tenant-shared-renderer/*",
+		"start:single-tenant-separate-renderer": "turbo run start --filter=@single-tenant-separate-renderer/*",
 		"start:multi-tenant": "turbo run start --filter=@multi-tenant/*"
 	},
 	"devDependencies": {

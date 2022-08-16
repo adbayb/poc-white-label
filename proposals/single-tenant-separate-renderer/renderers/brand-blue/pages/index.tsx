@@ -1,4 +1,4 @@
-import { RootPage } from "@single-tenant-renderer/white-label-application";
+import { RootPage } from "@single-tenant-separate-renderer/white-label-application";
 import type { NextPage } from "next";
 import Head from "next/head";
 

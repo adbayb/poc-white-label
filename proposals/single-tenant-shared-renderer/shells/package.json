@@ -1,5 +1,5 @@
 {
-	"name": "@single-tenant-component/shells",
+	"name": "@single-tenant-shared-renderer/shells",
 	"private": true,
 	"exports": {
 		"./brand-blue": {

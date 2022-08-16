@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Provider } from "@single-tenant-renderer/white-label-application";
+import { Provider } from "@single-tenant-separate-renderer/white-label-application";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

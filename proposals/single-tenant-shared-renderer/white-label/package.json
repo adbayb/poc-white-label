@@ -1,5 +1,5 @@
 {
-  "name": "@single-tenant-component/white-label",
+  "name": "@single-tenant-shared-renderer/white-label",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@framework/design-system": "workspace:*",
-    "@single-tenant-component/shells": "workspace:*",
+    "@single-tenant-shared-renderer/shells": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

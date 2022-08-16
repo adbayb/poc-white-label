@@ -1,5 +1,5 @@
 {
-  "name": "@single-tenant-renderer/white-label-renderer-brand-blue",
+  "name": "@single-tenant-separate-renderer/white-label-renderer-brand-blue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@framework/design-system": "workspace:*",
-    "@single-tenant-renderer/white-label-application": "workspace:*",
-    "@single-tenant-renderer/white-label-bff": "workspace:*",
+    "@single-tenant-separate-renderer/white-label-application": "workspace:*",
+    "@single-tenant-separate-renderer/white-label-bff": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

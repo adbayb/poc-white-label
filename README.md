@@ -52,4 +52,4 @@ To explore white-labelling challenges, three proposals have been explored:
 
 - [Multi-tenant architecture](proposals/multi-tenant): One white-label infrastructure shared across tenants (a single software runtime serves multiple customers)
 - [Single-tenant architecture with one renderer codebase](proposals/single-tenant-one-renderer): One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase
-- [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-multi-renderer): One white-label infrastructure and one renderer codebase per tenant
+- [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per tenant

@@ -1,7 +1,7 @@
 packages:
   - "resources/*"
   - "proposals/multi-tenant"
-  - "proposals/single-tenant-component/*"
-  - "proposals/single-tenant-renderer/renderers/*"
-  - "proposals/single-tenant-renderer/application"
-  - "proposals/single-tenant-renderer/bff"
+  - "proposals/single-tenant-shared-renderer/*"
+  - "proposals/single-tenant-separate-renderer/renderers/*"
+  - "proposals/single-tenant-separate-renderer/application"
+  - "proposals/single-tenant-separate-renderer/bff"
