@@ -1,11 +1,32 @@
+import { Typography, View } from "@framework/design-system";
 import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-factory";
 
 export default createTenant({
-	title: "brand-blue",
-	description: "👋 from brand-blue",
+	title: "brand-red",
+	description: "👋 from brand-red",
+	footer: (
+		<View
+			as="footer"
+			position="fixed"
+			bottom={0}
+			left={0}
+			right={0}
+			height={100}
+			backgroundColor="accent-secondary"
+			alignItems="center"
+			justifyContent="center"
+		>
+			<Typography
+				variation="strong"
+				color="neutral-white"
+			>
+				Footer
+			</Typography>
+		</View>
+	),
 	theme: Object.freeze({
 		colors: Object.freeze({
-			"accent-primary": "#1432be",
+			"accent-primary": "#ff0000",
 			"accent-secondary": "#777777",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",
@@ -30,8 +51,8 @@ export default createTenant({
 		texts: Object.freeze({
 			"text-0": 0,
 			"text-14": 14,
-			"text-24": 16,
-			"text-36": 18,
+			"text-24": 24,
+			"text-36": 36,
 		}),
 	}),
 });

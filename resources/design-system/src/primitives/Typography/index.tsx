@@ -9,21 +9,20 @@ export interface TypographyProps extends ViewProps {
 	variation?: "strong";
 }
 
-/**
- * The base Lego element for text like view
- */
 export const Typography = ({
+	as,
 	children,
 	size = "text-14",
 	numberOfLines,
-	lineHeight,
+	lineHeight = 1.55,
 	variation,
 	...restProps
 }: TypographyProps) => {
 	const token = useToken();
 	const ellipsisProps = mapMaxLinesToStyleProps(numberOfLines);
 	const isStrongVariation = variation === "strong";
-	const Element = isStrongVariation ? "strong" : "span";
+	const Element =
+		typeof as === "string" ? as : isStrongVariation ? "strong" : "span";
 
 	return (
 		<View
