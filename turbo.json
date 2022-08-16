@@ -1,17 +1,20 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
-	"baseBranch": "origin/main",
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": ["dist/**"]
+			"outputs": ["dist/**", ".next/**"]
 		},
 		"fix": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"verify": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"serve": {
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"clean": {
@@ -19,10 +22,7 @@
 			"cache": false
 		},
 		"start": {
-			"cache": false
-		},
-		"watch": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"cache": false
 		}
 	}

@@ -7,9 +7,8 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "pnpm watch",
-		"build": "rollup -c",
-		"watch": "pnpm build -w"
+		"start": "pnpm build -w",
+		"build": "rollup -c"
 	},
 	"devDependencies": {
 		"@babel/core": "7.18.10",

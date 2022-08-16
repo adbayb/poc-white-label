@@ -7,9 +7,8 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "pnpm watch",
-		"build": "quickbundle build",
-		"watch": "quickbundle watch"
+		"start": "quickbundle watch",
+		"build": "quickbundle build"
 	},
 	"devDependencies": {
 		"@types/react": "18.0.15",

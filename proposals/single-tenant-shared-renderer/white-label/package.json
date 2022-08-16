@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "pnpm watch",
-    "watch": "next dev",
+    "start": "next dev",
     "build": "next build",
     "serve": "next start",
     "verify": "next lint"

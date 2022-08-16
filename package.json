@@ -24,14 +24,14 @@
 		"fix": "turbo run fix",
 		"test": "turbo run test",
 		"build": "turbo run build",
-		"start:single-tenant-shared-renderer:brand-red": "BRAND_ID=brand-red turbo run watch --filter=@single-tenant-shared-renderer/*",
-		"start:single-tenant-shared-renderer:brand-blue": "BRAND_ID=brand-blue turbo run watch --filter=@single-tenant-shared-renderer/*",
+		"start:single-tenant-shared-renderer:brand-red": "BRAND_ID=brand-red turbo run start --filter=@single-tenant-shared-renderer/*",
+		"start:single-tenant-shared-renderer:brand-blue": "BRAND_ID=brand-blue turbo run start --filter=@single-tenant-shared-renderer/*",
 		"start:single-tenant-separate-renderer": "turbo run start --filter=@single-tenant-separate-renderer/*",
 		"start:multi-tenant": "turbo run start --filter=@multi-tenant/*"
 	},
 	"devDependencies": {
 		"@adbayb/scripts": "0.14.0",
-		"turbo": "1.4.2",
+		"turbo": "1.4.3",
 		"typescript": "4.7.4"
 	},
 	"prettier": "@adbayb/prettier-config",
