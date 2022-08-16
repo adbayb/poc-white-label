@@ -1,6 +1,6 @@
-import { createShell } from "../createShell";
+import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-factory";
 
-export default createShell({
+export default createTenant({
 	title: "brand-blue",
 	description: "👋 from brand-blue",
 	theme: Object.freeze({

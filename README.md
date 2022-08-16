@@ -28,6 +28,11 @@ To explore them, a simple white-label product version will be implemented: an he
 Experimenting multiple integration solutions: not exclusive to the white-label explorations. It's more tied to the way a micro-frontend should be integrated in an optimized way application-side. To dig deeper on available techniques, you can check [the following repository](https://github.com/adbayb/poc-micro-frontend).  
 For the sake of experimentation, the strategy is fixed: the white-label will be integrated as a micro-application (ie. will take visually the full page) via a server-side composition pattern (through Next.js framework).
 
+**Constraints:**
+
+- [ ] Whatever the used tenancy model, a tenant-specific code should not leak inside another tenant
+- [ ] Server-side rendering
+
 ## 🧪 Experimentations
 
 ### Actors and building blocks involved in proposals

@@ -1,8 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-
-const Shell = require(`@single-tenant-shared-renderer/shells/${process.env.BRAND_ID}`)
-	.default as typeof import("@single-tenant-shared-renderer/shells/brand-red").default;
+import { Shell } from "../components/TenantProxy"
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

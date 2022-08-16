@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@framework/design-system": "workspace:*",
-    "@single-tenant-shared-renderer/shells": "workspace:*",
+    "@single-tenant-shared-renderer/white-label-tenant-brand-blue": "workspace:*",
+    "@single-tenant-shared-renderer/white-label-tenant-brand-red": "workspace:*",
+    "@single-tenant-shared-renderer/white-label-tenant-factory": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

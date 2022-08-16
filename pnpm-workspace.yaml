@@ -1,7 +1,8 @@
 packages:
   - "resources/*"
   - "proposals/multi-tenant"
-  - "proposals/single-tenant-shared-renderer/*"
+  - "proposals/single-tenant-shared-renderer/tenants/*"
+  - "proposals/single-tenant-shared-renderer/white-label"
   - "proposals/single-tenant-separate-renderer/renderers/*"
   - "proposals/single-tenant-separate-renderer/application"
   - "proposals/single-tenant-separate-renderer/bff"

@@ -1,14 +1,12 @@
-import { createShell } from "../createShell";
+import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-factory";
 
-import "./public/logo.png";
-
-export default createShell({
+export default createTenant({
 	title: "brand-red",
 	description: "👋 from brand-red",
 	theme: Object.freeze({
 		colors: Object.freeze({
 			"accent-primary": "#ff0000",
-			"accent-secondary": "#af0000",
+			"accent-secondary": "#777777",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",
 		}),
