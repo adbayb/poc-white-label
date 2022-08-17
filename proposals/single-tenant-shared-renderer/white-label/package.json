@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "next dev -p $PORT",
+    "prestart": "node ./scripts/tenant.js",
     "build": "next build",
-    "postbuild": "node ./scripts/tenant.js",
     "serve": "next start -p $PORT",
     "verify": "next lint"
   },
