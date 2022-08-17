@@ -4,6 +4,7 @@ import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-
 export default createTenant({
 	title: "brand-red",
 	description: "👋 from brand-red",
+	redirectionLink: "https://www.seloger.com/",
 	footer: (
 		<View
 			as="footer"
@@ -16,18 +17,13 @@ export default createTenant({
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Typography
-				variation="strong"
-				color="neutral-white"
-			>
-				Footer
-			</Typography>
+			<Typography variation="strong">Footer</Typography>
 		</View>
 	),
 	theme: Object.freeze({
 		colors: Object.freeze({
-			"accent-primary": "#ff0000",
-			"accent-secondary": "#777777",
+			"accent-primary": "#ea1919",
+			"accent-secondary": "#fddddd",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",
 		}),
@@ -52,7 +48,7 @@ export default createTenant({
 			"text-0": 0,
 			"text-14": 14,
 			"text-24": 24,
-			"text-36": 36,
+			"text-48": 48,
 		}),
 	}),
 });

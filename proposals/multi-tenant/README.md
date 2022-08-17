@@ -39,7 +39,7 @@ sequenceDiagram
     participant WApp as White-label - Application [Component]
     participant WBff as White-label - BFF [Server]
     participant D as Dowstream services
-    T->>+S: route(RequestParameters: { id: 'white-label-id', hostId: 'brand-blue' | 'brand-red', env: 'prod' | 'staging', ... })
+    T->>+S: route(RequestParameters: { id: 'white-label-id', tenantID: 'brand-blue' | 'brand-red', env: 'prod' | 'staging', ... })
     # The route operation should be defined technically depending on the performance budget (SEO constraint, ...): build-time (package consumption) / run-time (dynamic ESM loading) or server-side composition (reverse proxy, server side includes, ...)
     # Request parameters could be provided via environment variables
     S->>+WReg: requestMetadata(requestParameters)
@@ -48,8 +48,8 @@ sequenceDiagram
     Note right of WReg: White-label static files generated at build-time (from the renderer and application)
     WReg-->>-S: append(staticFiles)
     opt renderingMode is 'server'
-        S->>+WRen: renderPageFragment(id, hostId)
-        WRen->>+WBff: getServerSideProps(hostID)
+        S->>+WRen: renderPageFragment(id, tenantID)
+        WRen->>+WBff: getServerSideProps(tenantID)
         loop For as many services as needed
             WBff->>+D: requestData(...)
             D-->>-WBff: Result<DataFromAGivenService>
@@ -60,9 +60,9 @@ sequenceDiagram
         WRen-->>-S: append(pageFragment)
     end
     S-->>-T: Result<Page>
-    S->>+WRen: mount(id, hostID)
-    WRen->>+WApp: render(hostID)
-    WApp->>+WBff: requestData(hostID)
+    S->>+WRen: mount(id, tenantID)
+    WRen->>+WApp: render(tenantID)
+    WApp->>+WBff: requestData(tenantID)
     loop For as many services as needed
         WBff->>+D: requestData(...)
         D-->>-WBff: Result<DataFromAGivenService>

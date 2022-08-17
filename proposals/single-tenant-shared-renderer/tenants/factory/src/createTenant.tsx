@@ -1,6 +1,8 @@
 import Head from "next/head";
 import {
 	DesignSystemProvider,
+	Link,
+	LinkProps,
 	TokenValue,
 	Typography,
 	View,
@@ -9,6 +11,7 @@ import { ReactElement, ReactNode } from "react";
 
 export type Contract = {
 	Shell: (props: { children: ReactNode }) => JSX.Element;
+	RedirectionLink: ReturnType<typeof createRedirectionLink>;
 };
 
 type Configuration = {
@@ -16,10 +19,12 @@ type Configuration = {
 	description: string;
 	theme: TokenValue;
 	footer: ReactElement | null;
+	redirectionLink: string;
 };
 
 export const createTenant = (configuration: Configuration): Contract => {
 	const Layout = createLayout(configuration);
+	const RedirectionLink = createRedirectionLink(configuration);
 
 	return {
 		Shell: (props) => {
@@ -38,6 +43,7 @@ export const createTenant = (configuration: Configuration): Contract => {
 				</>
 			);
 		},
+		RedirectionLink,
 	};
 };
 
@@ -54,9 +60,16 @@ const createLayout = (configuration: Configuration) =>
 				alignItems="center"
 				padding="spacing-24"
 			>
-				<Typography size="text-36">{configuration.description}</Typography>
+				<Typography size="text-48">{configuration.description}</Typography>
 				{children}
 				{configuration.footer}
 			</View>
 		);
+	};
+
+type RedirectionLinkProps = Pick<LinkProps, "children">;
+
+const createRedirectionLink = (configuration: Configuration) =>
+	function RedirectionLink({ children }: RedirectionLinkProps) {
+		return <Link href={configuration.redirectionLink}>{children}</Link>;
 	};

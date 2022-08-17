@@ -26,6 +26,6 @@ export const DEFAULT_THEME = Object.freeze({
 		"text-0": 0,
 		"text-14": 14,
 		"text-24": 24,
-		"text-36": 36,
+		"text-48": 48,
 	}),
 });

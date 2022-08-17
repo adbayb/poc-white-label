@@ -3,11 +3,12 @@ import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-
 export default createTenant({
 	title: "brand-blue",
 	description: "👋 from brand-blue",
+	redirectionLink: "https://www.meilleursagents.com/",
 	footer: null,
 	theme: Object.freeze({
 		colors: Object.freeze({
 			"accent-primary": "#1432be",
-			"accent-secondary": "#777777",
+			"accent-secondary": "#dae1ff",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",
 		}),
@@ -32,7 +33,7 @@ export default createTenant({
 			"text-0": 0,
 			"text-14": 14,
 			"text-24": 24,
-			"text-36": 36,
+			"text-48": 48,
 		}),
 	}),
 });

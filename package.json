@@ -37,6 +37,9 @@
 	"prettier": "@adbayb/prettier-config",
 	"eslintConfig": {
 		"extends": "@adbayb",
-		"root": true
+		"root": true,
+		"rules": {
+			"import/no-default-export": "off"
+		}
 	}
 }

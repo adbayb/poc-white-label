@@ -1,5 +1,5 @@
-import { TextTokenName, useToken } from "../tokens";
-import { View, ViewProps } from "../View";
+import { TextTokenName, useToken } from "./tokens";
+import { View, ViewProps } from "./View";
 
 export interface TypographyProps extends ViewProps {
 	children: string | number;

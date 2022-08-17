@@ -1,10 +1,9 @@
-/** @jsxImportSource @emotion/react */
-import { jsx } from "@emotion/react";
+import { css } from "coulis";
 import {
 	ElementType,
-	FunctionComponentElement,
 	ReactElement,
 	ReactNode,
+	cloneElement,
 	forwardRef,
 	isValidElement,
 } from "react";
@@ -38,7 +37,9 @@ export const View = forwardRef<ViewRef, ViewProps>(function View(
 	ref
 ) {
 	const token = useToken();
-	const styles = mapStyleToPlatformAttributes(restProps, token);
+	const styles = css(
+		mapStyleToPlatformAttributes(restProps, token) as Parameters<typeof css>[0]
+	);
 	const accessibilityProps = mapAccessiblityToPlatformAttributes({
 		accessibilityDescribedBy,
 		accessibilityLabel,
@@ -52,34 +53,20 @@ export const View = forwardRef<ViewRef, ViewProps>(function View(
 	};
 
 	if (isValidElement(Element)) {
-		return cloneElement(
-			Element as FunctionComponentElement<Record<string, unknown>>,
-			{
-				...commonProps,
-				css: styles,
-				ref,
-			}
-		);
+		return cloneElement(Element, {
+			...commonProps,
+			className: styles,
+			ref,
+		});
 	}
 
 	return (
 		<Element
 			{...commonProps}
-			css={styles}
+			className={styles}
 			ref={ref}
 		>
 			{children}
 		</Element>
 	);
 });
-
-const cloneElement = <Props extends Record<string, unknown>>(
-	element: FunctionComponentElement<Props>,
-	props: Props
-) =>
-	jsx(element.type, {
-		key: element.key,
-		ref: element.ref,
-		...element.props,
-		...props,
-	});

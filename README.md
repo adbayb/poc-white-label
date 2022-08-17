@@ -19,7 +19,7 @@ To explore them, a simple white-label product version will be implemented: an he
 
 - [ ] Shared logic: a generic logic including metadata, content & feature
 - [ ] Brand-specific assets: sitemap
-- [ ] Brand-specific UI: logo and themeable button
+- [ ] Brand-specific UI: button
 - [ ] Brand-specific UX: page redirection
 - [ ] Brand-specific metadata: title and description tag
 

@@ -17,7 +17,7 @@ export type SpacingTokenName =
 	| "spacing-16"
 	| "spacing-20"
 	| "spacing-24";
-export type TextTokenName = "text-0" | "text-14" | "text-24" | "text-36";
+export type TextTokenName = "text-0" | "text-14" | "text-24" | "text-48";
 
 export type TokenValue = {
 	colors: Readonly<Record<ColorTokenName, string>>;
