@@ -40,14 +40,14 @@ For the sake of experimentation, the strategy is fixed: the white-label will be 
 Four main actors participate to the white-labelling process:
 
 - **Tenant**: The brand application hosting the white-label application
-- **Shell**: The integration orchestrator. Its main responsibility is to enable the white-label application integration into the tenant in the best possible conditions (eg. retrieving the white-label logic, decorating it with tenant-aware configuration, managing its loading lifecycle, ...)
+- **Shell**: The tenant-aware white-label integration orchestrator (each tenant has its own shell). Its main responsibility is to welcome, in the best conditions, a white-label inside a tenant (ie. decorating it with tenant-aware configuration)
 - **Registry**: Global white-label registry to discover and serve critical white-label resources (by critical, we mean all resources (URL, metadata, static files) needed to display the white-label)
 - **White-label**: The white-label application to adapt and integrate into a tenant
 - **Downstream services**: Provide needed data from a given source (eg. backend service, authorization server, third party service like feature flag system, ...)
 
 Let's zoom into the white-label actor by enumerating its components:
 
-- **Renderer**: Top-level wrapper managing the white-label rendering (including brand configuration consumption)
+- **Renderer**: Manage the white-label rendering strategy (including server-side rendering and client-side bootstrapping/hydration)
 - **Application**: Core business logic implementation (shared across brands)
 - **BFF (Backend For Frontend)**: Manage communication with external systems and deliver the consolidated data to the requestor. It acts as an ACL and consolidated data provider for the white-label needs
 
@@ -56,5 +56,5 @@ Let's zoom into the white-label actor by enumerating its components:
 To explore white-labelling challenges, three proposals have been explored:
 
 - [Multi-tenant architecture](proposals/multi-tenant): One white-label infrastructure shared across tenants (a single software runtime serves multiple customers)
-- [Single-tenant architecture with one renderer codebase](proposals/single-tenant-one-renderer): One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase
+- [Single-tenant architecture with one renderer codebase](proposals/single-tenant-shared-renderer): One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase
 - [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per tenant
