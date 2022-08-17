@@ -3,7 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	env: {
-		BRAND_ID: process.env.BRAND_ID,
+		TENANT_ID: process.env.TENANT_ID,
 	},
 };
 

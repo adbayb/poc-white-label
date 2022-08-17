@@ -7,7 +7,7 @@ export default createTenant({
 	footer: null,
 	theme: Object.freeze({
 		colors: Object.freeze({
-			"accent-primary": "#1432be",
+			"accent-primary": "#3a55d6",
 			"accent-secondary": "#dae1ff",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",

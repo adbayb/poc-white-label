@@ -22,7 +22,7 @@ export default createTenant({
 	),
 	theme: Object.freeze({
 		colors: Object.freeze({
-			"accent-primary": "#ea1919",
+			"accent-primary": "#be3333",
 			"accent-secondary": "#fddddd",
 			"neutral-white": "#ffffff",
 			"neutral-black": "#000000",

@@ -11,7 +11,7 @@
 White-labelling consists of producing generic "plug-and-play" products that can be decorated slightly by each brand to match their identity and make it appear as if they had made it. It comes with two main challenges:
 
 - Customization capabilities: it should enable small variations to adapt it to the brand (eg. logo, colors, ...).
-- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per brand (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
+- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per brand (or tenant) (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
 
 To explore them, a simple white-label product version will be implemented: an hello world page integrated into two brands (arbitrary called `brand-red` and `brand-blue`) with the following requirements:
 
@@ -30,6 +30,7 @@ For the sake of experimentation, the strategy is fixed: the white-label will be 
 
 **Constraints:**
 
+- [ ] To ease the white-label integration, the changes on the existing should be minimized (existing brand should "only" act as an entrypoint and delegate the integration to a new system)
 - [ ] Whatever the used tenancy model, a tenant-specific code should not leak inside another tenant
 - [ ] Server-side rendering
 

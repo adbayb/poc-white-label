@@ -24,8 +24,8 @@
 		"fix": "turbo run fix",
 		"test": "turbo run test",
 		"build": "turbo run build",
-		"start:single-tenant-shared-renderer:brand-red": "BRAND_ID=brand-red turbo run start --filter=@single-tenant-shared-renderer/* --filter=@framework/*",
-		"start:single-tenant-shared-renderer:brand-blue": "BRAND_ID=brand-blue turbo run start --filter=@single-tenant-shared-renderer/* --filter=@framework/*",
+		"start:single-tenant-shared-renderer:brand-blue": "TENANT_ID=brand-blue PORT=3000 turbo run start --filter=@single-tenant-shared-renderer/* --filter=@framework/*",
+		"start:single-tenant-shared-renderer:brand-red": "TENANT_ID=brand-red PORT=3001 turbo run start --filter=@single-tenant-shared-renderer/* --filter=@framework/*",
 		"start:single-tenant-separate-renderer": "turbo run start --filter=@single-tenant-separate-renderer/* --filter=@framework/*",
 		"start:multi-tenant": "turbo run start --filter=@multi-tenant/* --filter=@framework/*"
 	},

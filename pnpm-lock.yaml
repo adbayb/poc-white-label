@@ -144,6 +144,7 @@ importers:
       '@types/react-dom': 18.0.6
       eslint: 8.21.0
       eslint-config-next: 12.2.3
+      fs-extra: 10.1.0
       next: 12.2.3
       react: 18.2.0
       react-dom: 18.2.0
@@ -162,6 +163,7 @@ importers:
       '@types/react-dom': 18.0.6
       eslint: 8.21.0
       eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
+      fs-extra: 10.1.0
       typescript: 4.7.4
 
   resources/design-system:
