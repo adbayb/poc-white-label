@@ -7,26 +7,19 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "rollup -c -w",
-		"build": "rollup -c"
-	},
-	"devDependencies": {
-		"@babel/core": "7.18.10",
-		"@rollup/plugin-commonjs": "22.0.2",
-		"@rollup/plugin-node-resolve": "13.3.0",
-		"@rollup/plugin-typescript": "8.3.4",
-		"@types/react": "18.0.15",
-		"@types/react-dom": "18.0.6",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"rollup": "2.77.2",
-		"rollup-plugin-filesize": "9.1.2",
-		"tslib": "2.4.0",
-		"typescript": "4.7.4"
+		"start": "quickbundle watch",
+		"build": "quickbundle build"
 	},
 	"peerDependencies": {
 		"react": ">=18.0.0",
 		"react-dom": ">=18.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "18.0.15",
+		"@types/react-dom": "18.0.6",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"typescript": "4.7.4"
 	},
 	"dependencies": {
 		"coulis": "0.3.0"
