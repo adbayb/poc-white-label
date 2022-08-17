@@ -7,7 +7,7 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"start": "pnpm build -w",
+		"start": "rollup -c -w",
 		"build": "rollup -c"
 	},
 	"devDependencies": {
