@@ -11,7 +11,7 @@ export const Layout = ({ children }: LayoutProps) => {
 			as="main"
 			minHeight="100vh"
 			alignItems="center"
-			justifyContent="center"
+			padding="spacing-24"
 		>
 			{children}
 		</View>

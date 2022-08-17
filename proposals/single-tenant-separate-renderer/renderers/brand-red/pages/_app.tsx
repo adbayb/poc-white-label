@@ -3,14 +3,15 @@ import Head from "next/head";
 import { DesignSystemProvider } from "@framework/design-system";
 import { Layout } from "@single-tenant-separate-renderer/white-label-application";
 import { DESCRIPTION, TITLE } from "../constants";
+import { Footer } from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<DesignSystemProvider
 			theme={Object.freeze({
 				colors: Object.freeze({
-					"accent-primary": "#3a55d6",
-					"accent-secondary": "#dae1ff",
+					"accent-primary": "#be3333",
+					"accent-secondary": "#fddddd",
 					"neutral-white": "#ffffff",
 					"neutral-black": "#000000",
 				}),
@@ -49,6 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 			<Layout>
 				<Component {...pageProps} />
+				<Footer />
 			</Layout>
 		</DesignSystemProvider>
 	);

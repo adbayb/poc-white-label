@@ -1,2 +1,2 @@
-export { Provider } from "./Provider";
-export { RootPage } from "./pages/Root";
+export { Page } from "./Page";
+export { Layout } from "./Layout";

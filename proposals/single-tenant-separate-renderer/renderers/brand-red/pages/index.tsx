@@ -7,7 +7,7 @@ const Home: NextPage = () => {
 	return (
 		<Page
 			titleSlot={<Typography size="text-48">{DESCRIPTION}</Typography>}
-			redirectionLink="https://www.meilleursagents.com/"
+			redirectionLink="https://www.seloger.com/"
 		/>
 	);
 };
