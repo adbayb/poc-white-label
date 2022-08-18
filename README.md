@@ -23,16 +23,13 @@ To explore them, a simple white-label product version will be implemented: an he
 - [ ] Brand-specific UX: page redirection
 - [ ] Brand-specific metadata: title and description tag
 
-**Out of scope**:
-
-Experimenting multiple integration solutions: not exclusive to the white-label explorations. It's more tied to the way a micro-frontend should be integrated in an optimized way application-side. To dig deeper on available techniques, you can check [the following repository](https://github.com/adbayb/poc-micro-frontend).  
-For the sake of experimentation, the strategy is fixed: the white-label will be integrated as a micro-application (ie. will take visually the full page) via a server-side composition pattern (through Next.js framework).
-
 **Constraints:**
 
 - [ ] To ease the white-label integration, the changes on the existing should be minimized (existing brand should "only" act as an entrypoint and delegate the integration to a new system)
 - [ ] Whatever the used tenancy model, a tenant-specific code should not leak inside another tenant
-- [ ] Server-side rendering
+- [ ] The integration strategy is fixed: the white-label will be integrated as a micro-application (ie. will take visually the full page) and rendered server-side (via Next.js framework). Experimenting different integration solutions is out of this exploration scope since it's a more global topic (typically linked to the monolithic vs micro-frontend architecture) not exclusive to the white-labelling process. To dig deeper on available techniques, you can check [the following repository meant for that purpose](https://github.com/adbayb/poc-micro-frontend).
+
+<br>
 
 ## 🧪 Experimentations
 
@@ -59,3 +56,9 @@ To explore white-labelling challenges, three proposals have been explored:
 - [Multi-tenant architecture](proposals/multi-tenant): One white-label infrastructure shared across tenants (a single software runtime serves multiple customers)
 - [Single-tenant architecture with one renderer codebase](proposals/single-tenant-shared-renderer): One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase
 - [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per tenant
+
+<br>
+
+## 📕 Resources
+
+- [Single- vs Multi-tenant white-label applications](https://stormotion.io/blog/how-to-build-a-white-label-app/#single-multi-tenancy-apps)
