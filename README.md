@@ -11,17 +11,17 @@
 White-labelling consists of producing generic "plug-and-play" products that can be decorated slightly by each brand to match their identity and make it appear as if they had made it. It comes with two main challenges:
 
 - Customization capabilities: it should enable small variations to adapt it to the brand (eg. logo, colors, ...).
-- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per brand (or tenant) (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
+- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per tenant (or brand: for the following content, the brand and tenant can be used interchangeably) (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
 
 To explore them, a simple white-label product version will be implemented: an hello world page integrated into two brands (arbitrary called `brand-red` and `brand-blue`) with the following requirements:
 
 **Scope**:
 
 - [ ] Shared logic: a generic logic including metadata, content & feature
-- [ ] Brand-specific assets: sitemap
+- [ ] Brand-specific metadata: title and description tag
+- [ ] Brand-specific static assets: sitemap
 - [ ] Brand-specific UI: button
 - [ ] Brand-specific UX: page redirection
-- [ ] Brand-specific metadata: title and description tag
 
 **Constraints:**
 
@@ -35,27 +35,30 @@ To explore them, a simple white-label product version will be implemented: an he
 
 ### Actors and building blocks involved in proposals
 
-Four main actors participate to the white-labelling process:
+Three systems participate to the white-labelling process:
 
-- **Tenant**: The brand application hosting the white-label application
-- **Shell**: The tenant-aware white-label integration orchestrator (each tenant has its own shell). Its main responsibility is to welcome, in the best conditions, a white-label inside a tenant (ie. decorating it with tenant-aware configuration)
-- **Registry**: Global white-label registry to discover and serve critical white-label resources (by critical, we mean all resources (URL, metadata, static files) needed to display the white-label)
-- **White-label**: The white-label application to adapt and integrate into a tenant
-- **Downstream services**: Provide needed data from a given source (eg. backend service, authorization server, third party service like feature flag system, ...)
+- **Tenant (or brand)**: The brand application hosting the white-label application
+- **White-label**: The white label to adapt and integrate into a brand
+- **Dependencies**: External resources serving the white-label needs. It can be downstream services (external data sources such as back-end services, feature flag system, ...) and frameworks (shared packages and tools to build white-label products in a standard way)
 
-Let's zoom into the white-label actor by enumerating its components:
+Let's zoom more specifically into the white-label integration system by enumerating its components (represented by blue boxes in the diagram below):
 
+- **Shell**: The white-label integration orchestrator. By nature, the shell is tightly coupled to the brand (each brand has its own shell) and the white label (the relationship between the shell for a given brand and the white label is always one-to-one). Its main responsibility is to welcome, in the best conditions, a white label inside a brand (ie. decorating it with brand-aware configuration and assets)
 - **Renderer**: Manage the white-label rendering strategy (including server-side rendering and client-side bootstrapping/hydration)
-- **Application**: Core business logic implementation (shared across brands)
-- **BFF (Backend For Frontend)**: Manage communication with external systems and deliver the consolidated data to the requestor. It acts as an ACL and consolidated data provider for the white-label needs
+- **Application**: The front-end application implementing the core business logic (shared across brands)
+- **BFF (Backend For Frontend)**: The custom-fitted backend service for the white-label application. It optimizes the way data are retrieved from external services and transformed/served to match white-label needs
+
+To sum up, the high-level integration design shared between proposals can be visualized via the following [C4 model](https://c4model.com/):
+
+![Overview](https://user-images.githubusercontent.com/10498826/186437351-03c2960b-c593-45c5-8c49-758292de3527.png)
 
 ### Proposals
 
 To explore white-labelling challenges, three proposals have been explored:
 
 - [Multi-tenant architecture](proposals/multi-tenant): One white-label infrastructure shared across tenants (a single software runtime serves multiple customers)
-- [Single-tenant architecture with one renderer codebase](proposals/single-tenant-shared-renderer): One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase
-- [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per tenant
+- [Single-tenant architecture with one renderer codebase](proposals/single-tenant-shared-renderer): One white-label infrastructure per brand (a single software runtime serves a single customer) with a single shared renderer codebase
+- [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per brand
 
 <br>
 

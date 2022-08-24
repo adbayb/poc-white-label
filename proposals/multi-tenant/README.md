@@ -27,6 +27,8 @@ pnpm start:multi-tenant
 
 ![Component diagram for multi-tenant proposal](https://user-images.githubusercontent.com/10498826/184859944-e36566a0-c22f-4cf1-92dc-124c00cf7f41.png)
 
+If we compare with single-tenant solutions, a new component is added to the integration system: the global white-label registry. Its responsibility is to discover and serve critical white-label resources (by critical, we mean all resources (URL, metadata, static files) needed by each tenant shell to display the white-label.
+
 ### Sequence diagram
 
 ```mermaid
