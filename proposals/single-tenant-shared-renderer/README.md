@@ -26,7 +26,7 @@ pnpm start:single-tenant-shared-renderer:brand-red
 
 ## 🏗 Architecture
 
-![Component diagram for single-tenant infrastructure with multi-tenant codebase](https://user-images.githubusercontent.com/10498826/184893195-b53da673-9aaf-4235-b0ea-811381d788ac.png)
+![Component diagram for single-tenant infrastructure with multi-tenant codebase](https://user-images.githubusercontent.com/10498826/186714313-caa9de76-c9fe-4df3-ae1a-562d98009bee.png)
 
 <br>
 
@@ -35,9 +35,9 @@ pnpm start:single-tenant-shared-renderer:brand-red
 ### Pros
 
 - One single source of truth (the renderer) for all brands to manage the core logic, the routing, BFF. _It's important to keep in mind that the single renderer is only code-side: there'll be one renderer built per brand (single-tenant architecture)_
-- Configuration contract to manage the brand specificities via a React component (`<Shell {...props} />`)
-- Consequently, ease the white-label and brand maintenance
+- Clear seperation of concerns between the shared vs configurable logic with a shared contract to manage each brand specificities
+- Consequently, ease the setup and maintenance
 
 ### Cons
 
-- Less flexibility on the unknown: the shell component scopes the brand configuration possibility
+- Any new specific brand configuration has to be added to the shared configuration contract and managed even for a non-impacted brand (which could be mitigated with a default value strategy)

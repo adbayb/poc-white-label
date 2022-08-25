@@ -23,7 +23,7 @@ pnpm start:single-tenant-separate-renderer
 
 ## 🏗 Architecture
 
-![Component diagram for single-tenant infrastructure with single-tenant codebase](https://user-images.githubusercontent.com/10498826/184859689-f6f72f28-420b-4044-a6c1-67aba33fe530.png)
+![Component diagram for single-tenant infrastructure with single-tenant codebase](https://user-images.githubusercontent.com/10498826/186714301-1b55622e-a16e-4ee1-b5cd-28f56bcfa4de.png)
 
 <br>
 

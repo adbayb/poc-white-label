@@ -25,9 +25,9 @@ pnpm start:multi-tenant
 
 ### Component diagram
 
-![Component diagram for multi-tenant proposal](https://user-images.githubusercontent.com/10498826/184859944-e36566a0-c22f-4cf1-92dc-124c00cf7f41.png)
+![Component diagram for multi-tenant proposal](https://user-images.githubusercontent.com/10498826/186714317-7af1dd1c-e677-4cad-ae2c-308ad11de886.png)
 
-In contrast to single-tenant solutions, a new component is added to the integration system: the global white-label registry. Its responsibility is to discover and serve critical white-label resources (by critical, we mean all configuration and resources (URL, metadata, static files, ...) needed by each brand shell to display the white-label).
+In contrast to single-tenant solutions, a new component is added to the integration system: **the global white-label registry**. Its responsibility is to discover and serve critical white-label resources (by critical, we mean all configuration and resources (URL, metadata, static files, ...) needed by each brand shell to display the white-label).
 
 ### Sequence diagram
 
@@ -74,6 +74,18 @@ sequenceDiagram
     WRen-->>-S: Result<Mounted>
 ```
 
-## Assessment
+<br>
 
-_TODO_
+## 👨‍🏫 Assessment
+
+### Pros
+
+- Single platform: one single source of truth to manage the white-label integration
+- Consequently (1/2), reduce the operational cost by sharing resources across clients
+- Consequently (2/2), ease the setup, maintainance, monitoring and release across clients
+
+### Cons
+
+- Less flexibility to do specific customization for a given brand
+- Sharing resources between tenants would mean having a solid understanding from the beginning about what is specific and what is not (for example, might not be suited for a MVP)
+- Tenant isolation (data) can be challenging to manage
