@@ -29,102 +29,10 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-separate-renderer/application:
+  proposals/server-side-integration/brands/brand-blue:
     specifiers:
       '@framework/design-system': workspace:*
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      next: 12.2.3
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.7.4
-    devDependencies:
-      '@framework/design-system': link:../../../dependencies/design-system
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      next: 12.2.3_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      typescript: 4.7.4
-
-  proposals/single-tenant-separate-renderer/bff:
-    specifiers:
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      next: 12.2.3
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.7.4
-    devDependencies:
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      next: 12.2.3_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      typescript: 4.7.4
-
-  proposals/single-tenant-separate-renderer/renderers/brand-blue:
-    specifiers:
-      '@framework/design-system': workspace:*
-      '@single-tenant-separate-renderer/white-label-application': workspace:*
-      '@single-tenant-separate-renderer/white-label-bff': workspace:*
-      '@types/node': 18.6.3
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      eslint: 8.21.0
-      eslint-config-next: 12.2.3
-      next: 12.2.3
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.7.4
-    dependencies:
-      '@framework/design-system': link:../../../../dependencies/design-system
-      '@single-tenant-separate-renderer/white-label-application': link:../../application
-      '@single-tenant-separate-renderer/white-label-bff': link:../../bff
-      next: 12.2.3_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    devDependencies:
-      '@types/node': 18.6.3
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      eslint: 8.21.0
-      eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
-      typescript: 4.7.4
-
-  proposals/single-tenant-separate-renderer/renderers/brand-red:
-    specifiers:
-      '@framework/design-system': workspace:*
-      '@single-tenant-separate-renderer/white-label-application': workspace:*
-      '@single-tenant-separate-renderer/white-label-bff': workspace:*
-      '@types/node': 18.6.3
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      eslint: 8.21.0
-      eslint-config-next: 12.2.3
-      next: 12.2.3
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.7.4
-    dependencies:
-      '@framework/design-system': link:../../../../dependencies/design-system
-      '@single-tenant-separate-renderer/white-label-application': link:../../application
-      '@single-tenant-separate-renderer/white-label-bff': link:../../bff
-      next: 12.2.3_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    devDependencies:
-      '@types/node': 18.6.3
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      eslint: 8.21.0
-      eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
-      typescript: 4.7.4
-
-  proposals/single-tenant-shared-renderer/brands/brand-blue:
-    specifiers:
-      '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
+      '@server-side-integration/brand-factory': workspace:*
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3
@@ -133,7 +41,7 @@ importers:
       typescript: 4.7.4
     devDependencies:
       '@framework/design-system': link:../../../../dependencies/design-system
-      '@single-tenant-shared-renderer/white-label-brand-factory': link:../factory
+      '@server-side-integration/brand-factory': link:../factory
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -141,10 +49,10 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/brands/brand-red:
+  proposals/server-side-integration/brands/brand-red:
     specifiers:
       '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
+      '@server-side-integration/brand-factory': workspace:*
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3
@@ -153,7 +61,7 @@ importers:
       typescript: 4.7.4
     devDependencies:
       '@framework/design-system': link:../../../../dependencies/design-system
-      '@single-tenant-shared-renderer/white-label-brand-factory': link:../factory
+      '@server-side-integration/brand-factory': link:../factory
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -161,7 +69,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/brands/factory:
+  proposals/server-side-integration/brands/factory:
     specifiers:
       '@framework/design-system': workspace:*
       '@types/react': 18.0.15
@@ -179,12 +87,12 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/white-label:
+  proposals/server-side-integration/white-label:
     specifiers:
       '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-brand-brand-blue': workspace:*
-      '@single-tenant-shared-renderer/white-label-brand-brand-red': workspace:*
-      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
+      '@server-side-integration/brand-blue': workspace:*
+      '@server-side-integration/brand-factory': workspace:*
+      '@server-side-integration/brand-red': workspace:*
       '@types/node': 18.6.3
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -197,9 +105,9 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@framework/design-system': link:../../../dependencies/design-system
-      '@single-tenant-shared-renderer/white-label-brand-brand-blue': link:../brands/brand-blue
-      '@single-tenant-shared-renderer/white-label-brand-brand-red': link:../brands/brand-red
-      '@single-tenant-shared-renderer/white-label-brand-factory': link:../brands/factory
+      '@server-side-integration/brand-blue': link:../brands/brand-blue
+      '@server-side-integration/brand-factory': link:../brands/factory
+      '@server-side-integration/brand-red': link:../brands/brand-red
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

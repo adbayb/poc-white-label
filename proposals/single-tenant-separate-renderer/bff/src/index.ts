@@ -1,1 +1,0 @@
-export { readContent } from "./api";

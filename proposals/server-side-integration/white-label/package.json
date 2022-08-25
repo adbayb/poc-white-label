@@ -1,5 +1,5 @@
 {
-  "name": "@single-tenant-shared-renderer/white-label",
+  "name": "@server-side-integration/white-label",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@framework/design-system": "workspace:*",
-    "@single-tenant-shared-renderer/white-label-brand-brand-blue": "workspace:*",
-    "@single-tenant-shared-renderer/white-label-brand-brand-red": "workspace:*",
-    "@single-tenant-shared-renderer/white-label-brand-factory": "workspace:*",
+    "@server-side-integration/brand-blue": "workspace:*",
+    "@server-side-integration/brand-red": "workspace:*",
+    "@server-side-integration/brand-factory": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

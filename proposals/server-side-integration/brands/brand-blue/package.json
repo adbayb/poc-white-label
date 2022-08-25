@@ -1,7 +1,7 @@
 {
-	"name": "@single-tenant-separate-renderer/white-label-bff",
+	"name": "@server-side-integration/brand-blue",
 	"private": true,
-	"source": "src/index.ts",
+	"source": "src/index.tsx",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -11,6 +11,8 @@
 		"build": "quickbundle build"
 	},
 	"devDependencies": {
+        "@framework/design-system": "workspace:*",
+        "@server-side-integration/brand-factory": "workspace:*",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
         "next": "12.2.3",
@@ -19,6 +21,8 @@
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
+        "@framework/design-system": "workspace:*",
+		"@server-side-integration/brand-factory": "workspace:*",
         "next": ">=12.0.0",
 		"react": ">=18.0.0",
         "react-dom": ">=18.0.0"

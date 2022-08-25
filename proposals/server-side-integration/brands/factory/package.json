@@ -1,5 +1,5 @@
 {
-	"name": "@single-tenant-separate-renderer/white-label-application",
+	"name": "@server-side-integration/brand-factory",
 	"private": true,
 	"source": "src/index.ts",
 	"main": "dist/index.cjs.js",
@@ -11,9 +11,9 @@
 		"build": "quickbundle build"
 	},
 	"devDependencies": {
+        "@framework/design-system": "workspace:*",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
-		"@framework/design-system": "workspace:*",
         "next": "12.2.3",
         "react": "18.2.0",
         "react-dom": "18.2.0",

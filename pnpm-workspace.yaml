@@ -1,8 +1,5 @@
 packages:
   - "dependencies/*"
-  - "proposals/multi-tenant"
-  - "proposals/single-tenant-shared-renderer/brands/*"
-  - "proposals/single-tenant-shared-renderer/white-label"
-  - "proposals/single-tenant-separate-renderer/renderers/*"
-  - "proposals/single-tenant-separate-renderer/application"
-  - "proposals/single-tenant-separate-renderer/bff"
+  - "proposals/client-side-integration/*"
+  - "proposals/server-side-integration/brands/*"
+  - "proposals/server-side-integration/white-label"

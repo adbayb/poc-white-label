@@ -27,7 +27,6 @@ To explore them, a simple white-label product version will be implemented: an he
 
 - [ ] To ease the white-label integration, the changes on the existing should be minimized (existing brand should "only" act as an entrypoint and delegate the integration to a new system)
 - [ ] Whatever the used tenancy model, a tenant-specific code should not leak inside another tenant
-- [ ] The integration strategy is fixed: the white-label will be integrated as a micro-application (ie. will take visually the full page) and rendered server-side (via Next.js framework). Experimenting different integration solutions is out of this exploration scope since it's a more global topic (typically linked to the monolithic vs micro-frontend architecture) not exclusive to the white-labelling process. To dig deeper on available techniques, you can check [the following repository meant for that purpose](https://github.com/adbayb/poc-micro-frontend).
 
 <br>
 
@@ -54,11 +53,14 @@ To sum up, the high-level integration design shared between proposals can be vis
 
 ### Proposals
 
-To explore white-labelling challenges, three proposals have been explored:
+TODO:
 
-- [Multi-tenant architecture](proposals/multi-tenant): One white-label infrastructure shared across tenants (a single software runtime serves multiple customers)
-- [Single-tenant architecture with one renderer codebase](proposals/single-tenant-shared-renderer): One white-label infrastructure per brand (a single software runtime serves a single customer) with a single shared renderer codebase
-- [Single-tenant architecture with multi-renderer codebases](proposals/single-tenant-separate-renderer): One white-label infrastructure and one renderer codebase per brand
+- Update confluence / miro link (+ split client / server integration inside integration confluence page to include for each one the github folder)
+
+To explore white-labelling challenges, two integration scenarios have been identified:
+
+- [Client-side integration](proposals/client-side-integration): TODO
+- [Server-side integration](proposals/server-side-integration): TODO
 
 <br>
 
