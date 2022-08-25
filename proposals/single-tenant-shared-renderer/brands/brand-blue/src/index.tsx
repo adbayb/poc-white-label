@@ -1,6 +1,6 @@
-import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-factory";
+import { createBrand } from "@single-tenant-shared-renderer/white-label-brand-factory";
 
-export default createTenant({
+export default createBrand({
 	title: "brand-blue",
 	description: "👋 from brand-blue",
 	redirectionLink: "https://www.meilleursagents.com/",

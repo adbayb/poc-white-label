@@ -11,7 +11,7 @@
 White-labelling consists of producing generic "plug-and-play" products that can be decorated slightly by each brand to match their identity and make it appear as if they had made it. It comes with two main challenges:
 
 - Customization capabilities: it should enable small variations to adapt it to the brand (eg. logo, colors, ...).
-- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per tenant (or brand: for the following content, the brand and tenant can be used interchangeably) (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
+- Hosting model (or [the tenancy model](https://blog.scaleway.com/saas-multi-tenant-vs-multi-instance-architectures/)): depending on the constraints (including scalability, security, isolation, availability, cost, ...), delivering one software and its supporting infrastructure per tenant (or brand: **in the rest of the documentation, brand and tenant can be used interchangeably**) (single-tenant architecture) or a shared one between brands (multi-tenant architecture) can be more suited.
 
 To explore them, a simple white-label product version will be implemented: an hello world page integrated into two brands (arbitrary called `brand-red` and `brand-blue`) with the following requirements:
 
@@ -37,7 +37,7 @@ To explore them, a simple white-label product version will be implemented: an he
 
 Three systems participate to the white-labelling process:
 
-- **Tenant (or brand)**: The brand application hosting the white-label application
+- **Brand**: The hosting target welcoming the white-label application
 - **White-label**: The white label to adapt and integrate into a brand
 - **Dependencies**: External resources serving the white-label needs. It can be downstream services (external data sources such as back-end services, feature flag system, ...) and frameworks (shared packages and tools to build white-label products in a standard way)
 

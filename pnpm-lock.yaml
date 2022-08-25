@@ -12,6 +12,23 @@ importers:
       turbo: 1.4.3
       typescript: 4.7.4
 
+  dependencies/design-system:
+    specifiers:
+      '@types/react': 18.0.15
+      '@types/react-dom': 18.0.6
+      coulis: 0.3.0
+      react: 18.2.0
+      react-dom: 18.2.0
+      typescript: 4.7.4
+    dependencies:
+      coulis: 0.3.0
+    devDependencies:
+      '@types/react': 18.0.15
+      '@types/react-dom': 18.0.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      typescript: 4.7.4
+
   proposals/single-tenant-separate-renderer/application:
     specifiers:
       '@framework/design-system': workspace:*
@@ -22,7 +39,7 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     devDependencies:
-      '@framework/design-system': link:../../../resources/design-system
+      '@framework/design-system': link:../../../dependencies/design-system
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -61,7 +78,7 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     dependencies:
-      '@framework/design-system': link:../../../../resources/design-system
+      '@framework/design-system': link:../../../../dependencies/design-system
       '@single-tenant-separate-renderer/white-label-application': link:../../application
       '@single-tenant-separate-renderer/white-label-bff': link:../../bff
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -75,10 +92,39 @@ importers:
       eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/tenants/brand-blue:
+  proposals/single-tenant-separate-renderer/renderers/brand-red:
     specifiers:
       '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-tenant-factory': workspace:*
+      '@single-tenant-separate-renderer/white-label-application': workspace:*
+      '@single-tenant-separate-renderer/white-label-bff': workspace:*
+      '@types/node': 18.6.3
+      '@types/react': 18.0.15
+      '@types/react-dom': 18.0.6
+      eslint: 8.21.0
+      eslint-config-next: 12.2.3
+      next: 12.2.3
+      react: 18.2.0
+      react-dom: 18.2.0
+      typescript: 4.7.4
+    dependencies:
+      '@framework/design-system': link:../../../../dependencies/design-system
+      '@single-tenant-separate-renderer/white-label-application': link:../../application
+      '@single-tenant-separate-renderer/white-label-bff': link:../../bff
+      next: 12.2.3_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@types/node': 18.6.3
+      '@types/react': 18.0.15
+      '@types/react-dom': 18.0.6
+      eslint: 8.21.0
+      eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
+      typescript: 4.7.4
+
+  proposals/single-tenant-shared-renderer/brands/brand-blue:
+    specifiers:
+      '@framework/design-system': workspace:*
+      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3
@@ -86,8 +132,8 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     devDependencies:
-      '@framework/design-system': link:../../../../resources/design-system
-      '@single-tenant-shared-renderer/white-label-tenant-factory': link:../factory
+      '@framework/design-system': link:../../../../dependencies/design-system
+      '@single-tenant-shared-renderer/white-label-brand-factory': link:../factory
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -95,10 +141,10 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/tenants/brand-red:
+  proposals/single-tenant-shared-renderer/brands/brand-red:
     specifiers:
       '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-tenant-factory': workspace:*
+      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3
@@ -106,8 +152,8 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     devDependencies:
-      '@framework/design-system': link:../../../../resources/design-system
-      '@single-tenant-shared-renderer/white-label-tenant-factory': link:../factory
+      '@framework/design-system': link:../../../../dependencies/design-system
+      '@single-tenant-shared-renderer/white-label-brand-factory': link:../factory
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -115,7 +161,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
-  proposals/single-tenant-shared-renderer/tenants/factory:
+  proposals/single-tenant-shared-renderer/brands/factory:
     specifiers:
       '@framework/design-system': workspace:*
       '@types/react': 18.0.15
@@ -125,7 +171,7 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     devDependencies:
-      '@framework/design-system': link:../../../../resources/design-system
+      '@framework/design-system': link:../../../../dependencies/design-system
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
@@ -136,9 +182,9 @@ importers:
   proposals/single-tenant-shared-renderer/white-label:
     specifiers:
       '@framework/design-system': workspace:*
-      '@single-tenant-shared-renderer/white-label-tenant-brand-blue': workspace:*
-      '@single-tenant-shared-renderer/white-label-tenant-brand-red': workspace:*
-      '@single-tenant-shared-renderer/white-label-tenant-factory': workspace:*
+      '@single-tenant-shared-renderer/white-label-brand-brand-blue': workspace:*
+      '@single-tenant-shared-renderer/white-label-brand-brand-red': workspace:*
+      '@single-tenant-shared-renderer/white-label-brand-factory': workspace:*
       '@types/node': 18.6.3
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
@@ -150,10 +196,10 @@ importers:
       react-dom: 18.2.0
       typescript: 4.7.4
     dependencies:
-      '@framework/design-system': link:../../../resources/design-system
-      '@single-tenant-shared-renderer/white-label-tenant-brand-blue': link:../tenants/brand-blue
-      '@single-tenant-shared-renderer/white-label-tenant-brand-red': link:../tenants/brand-red
-      '@single-tenant-shared-renderer/white-label-tenant-factory': link:../tenants/factory
+      '@framework/design-system': link:../../../dependencies/design-system
+      '@single-tenant-shared-renderer/white-label-brand-brand-blue': link:../brands/brand-blue
+      '@single-tenant-shared-renderer/white-label-brand-brand-red': link:../brands/brand-red
+      '@single-tenant-shared-renderer/white-label-brand-factory': link:../brands/factory
       next: 12.2.3_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -164,23 +210,6 @@ importers:
       eslint: 8.21.0
       eslint-config-next: 12.2.3_qugx7qdu5zevzvxaiqyxfiwquq
       fs-extra: 10.1.0
-      typescript: 4.7.4
-
-  resources/design-system:
-    specifiers:
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      coulis: 0.3.0
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.7.4
-    dependencies:
-      coulis: 0.3.0
-    devDependencies:
-      '@types/react': 18.0.15
-      '@types/react-dom': 18.0.6
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
       typescript: 4.7.4
 
 packages:
@@ -283,7 +312,7 @@ packages:
     resolution: {integrity: sha512-qZEWeccZCrHA2Au4/X05QW5CMdm4VjUDCrGq5gf1ZDcM4hRqreKrtwAn7yci9zfgAS9apvnsFXiGBHBAxZdK9A==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      core-js-pure: 3.24.1
+      core-js-pure: 3.25.0
       regenerator-runtime: 0.13.9
     dev: true
 
@@ -375,10 +404,10 @@ packages:
       '@commitlint/execute-rule': 16.2.1
       '@commitlint/resolve-extends': 16.2.1
       '@commitlint/types': 16.2.1
-      '@types/node': 18.7.6
+      '@types/node': 18.7.13
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.2_z5yog5l5yqinvqran22gqy2vdi
+      cosmiconfig-typescript-loader: 2.0.2_57uwcby55h6tzvkj3v5sfcgxoe
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.7.4
@@ -717,8 +746,8 @@ packages:
     resolution: {integrity: sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==}
     dev: true
 
-  /@types/node/18.7.6:
-    resolution: {integrity: sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==}
+  /@types/node/18.7.13:
+    resolution: {integrity: sha512-46yIhxSe5xEaJZXWdIBP7GU4HDTG8/eo0qd9atdiL+lFpA03y8KS+lkTN834TWJj5767GbWv4n/P6efyTFt1Dw==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -798,8 +827,8 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser/5.33.1_qugx7qdu5zevzvxaiqyxfiwquq:
-    resolution: {integrity: sha512-IgLLtW7FOzoDlmaMoXdxG8HOCByTBXrB1V2ZQYSEV1ggMmJfAkMWTwUjjzagS6OkfpySyhKFkBw7A9jYmcHpZA==}
+  /@typescript-eslint/parser/5.35.1_qugx7qdu5zevzvxaiqyxfiwquq:
+    resolution: {integrity: sha512-XL2TBTSrh3yWAsMYpKseBYTVpvudNf69rPOWXWVBI08My2JVT5jR66eTt4IgQFHA/giiKJW5dUD4x/ZviCKyGg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -808,9 +837,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 5.33.1
-      '@typescript-eslint/types': 5.33.1
-      '@typescript-eslint/typescript-estree': 5.33.1_typescript@4.7.4
+      '@typescript-eslint/scope-manager': 5.35.1
+      '@typescript-eslint/types': 5.35.1
+      '@typescript-eslint/typescript-estree': 5.35.1_typescript@4.7.4
       debug: 4.3.4
       eslint: 8.21.0
       typescript: 4.7.4
@@ -826,12 +855,12 @@ packages:
       '@typescript-eslint/visitor-keys': 5.17.0
     dev: true
 
-  /@typescript-eslint/scope-manager/5.33.1:
-    resolution: {integrity: sha512-8ibcZSqy4c5m69QpzJn8XQq9NnqAToC8OdH/W6IXPXv83vRyEDPYLdjAlUx8h/rbusq6MkW4YdQzURGOqsn3CA==}
+  /@typescript-eslint/scope-manager/5.35.1:
+    resolution: {integrity: sha512-kCYRSAzIW9ByEIzmzGHE50NGAvAP3wFTaZevgWva7GpquDyFPFcmvVkFJGWJJktg/hLwmys/FZwqM9EKr2u24Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.33.1
-      '@typescript-eslint/visitor-keys': 5.33.1
+      '@typescript-eslint/types': 5.35.1
+      '@typescript-eslint/visitor-keys': 5.35.1
     dev: true
 
   /@typescript-eslint/type-utils/5.17.0_f662wmtjhhyn6wvwljgximehn4:
@@ -858,8 +887,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/types/5.33.1:
-    resolution: {integrity: sha512-7K6MoQPQh6WVEkMrMW5QOA5FO+BOwzHSNd0j3+BlBwd6vtzfZceJ8xJ7Um2XDi/O3umS8/qDX6jdy2i7CijkwQ==}
+  /@typescript-eslint/types/5.35.1:
+    resolution: {integrity: sha512-FDaujtsH07VHzG0gQ6NDkVVhi1+rhq0qEvzHdJAQjysN+LHDCKDKCBRlZFFE0ec0jKxiv0hN63SNfExy0KrbQQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -884,8 +913,8 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.33.1_typescript@4.7.4:
-    resolution: {integrity: sha512-JOAzJ4pJ+tHzA2pgsWQi4804XisPHOtbvwUyqsuuq8+y5B5GMZs7lI1xDWs6V2d7gE/Ez5bTGojSK12+IIPtXA==}
+  /@typescript-eslint/typescript-estree/5.35.1_typescript@4.7.4:
+    resolution: {integrity: sha512-JUqE1+VRTGyoXlDWWjm6MdfpBYVq+hixytrv1oyjYIBEOZhBCwtpp5ZSvBt4wIA1MKWlnaC2UXl2XmYGC3BoQA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -893,8 +922,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.33.1
-      '@typescript-eslint/visitor-keys': 5.33.1
+      '@typescript-eslint/types': 5.35.1
+      '@typescript-eslint/visitor-keys': 5.35.1
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -931,11 +960,11 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@typescript-eslint/visitor-keys/5.33.1:
-    resolution: {integrity: sha512-nwIxOK8Z2MPWltLKMLOEZwmfBZReqUdbEoHQXeCpa+sRVARe5twpJGHCB4dk9903Yaf0nMAlGbQfaAH92F60eg==}
+  /@typescript-eslint/visitor-keys/5.35.1:
+    resolution: {integrity: sha512-cEB1DvBVo1bxbW/S5axbGPE6b7FIMAbo3w+AGq6zNDA7+NYJOIkKj/sInfTv4edxd4PxJSgdN4t6/pbvgA+n5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.33.1
+      '@typescript-eslint/types': 5.35.1
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -1136,8 +1165,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001378:
-    resolution: {integrity: sha512-JVQnfoO7FK7WvU4ZkBRbPjaot4+YqxogSDosHv0Hv5mWpUESmN+UubMU6L/hGz8QlQ2aY5U0vR6MOs6j/CXpNA==}
+  /caniuse-lite/1.0.30001383:
+    resolution: {integrity: sha512-swMpEoTp5vDoGBZsYZX7L7nXHe6dsHxi9o6/LKf/f0LukVtnrxly5GVb/fWdCDTqi/yw6Km6tiJ0pmBacm0gbg==}
 
   /chai/4.3.6:
     resolution: {integrity: sha512-bbcp3YfHCUzMOvKqsztczerVgBKSsEijCySNlHHbX3VG1nskvqjz5Rfso1gGwD6w6oOV3eI60pKuMOV5MV7p3Q==}
@@ -1267,21 +1296,21 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /core-js-pure/3.24.1:
-    resolution: {integrity: sha512-r1nJk41QLLPyozHUUPmILCEMtMw24NG4oWK6RbsDdjzQgg9ZvrUsPBj1MnG0wXXp1DCDU6j+wUvEmBSrtRbLXg==}
+  /core-js-pure/3.25.0:
+    resolution: {integrity: sha512-IeHpLwk3uoci37yoI2Laty59+YqH9x5uR65/yiA0ARAJrTrN4YU0rmauLWfvqOuk77SlNJXj2rM6oT/dBD87+A==}
     requiresBuild: true
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.2_z5yog5l5yqinvqran22gqy2vdi:
+  /cosmiconfig-typescript-loader/2.0.2_57uwcby55h6tzvkj3v5sfcgxoe:
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
       typescript: '>=3'
     dependencies:
-      '@types/node': 18.7.6
+      '@types/node': 18.7.13
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_z5yog5l5yqinvqran22gqy2vdi
+      ts-node: 10.9.1_57uwcby55h6tzvkj3v5sfcgxoe
       typescript: 4.7.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -1939,13 +1968,13 @@ packages:
     dependencies:
       '@next/eslint-plugin-next': 12.2.3
       '@rushstack/eslint-patch': 1.1.4
-      '@typescript-eslint/parser': 5.33.1_qugx7qdu5zevzvxaiqyxfiwquq
+      '@typescript-eslint/parser': 5.35.1_qugx7qdu5zevzvxaiqyxfiwquq
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.7.1_jatgrcxl4x7ywe7ak6cnjca2ae
-      eslint-plugin-import: 2.26.0_daixy6wwopwj32e3jzo4fx2moy
+      eslint-plugin-import: 2.26.0_7oxhxpfrfa36wphljyp7zzorei
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.21.0
-      eslint-plugin-react: 7.30.1_eslint@8.21.0
+      eslint-plugin-react: 7.31.0_eslint@8.21.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.21.0
       typescript: 4.7.4
     transitivePeerDependencies:
@@ -1980,7 +2009,7 @@ packages:
     dependencies:
       debug: 4.3.4
       eslint: 8.21.0
-      eslint-plugin-import: 2.26.0_daixy6wwopwj32e3jzo4fx2moy
+      eslint-plugin-import: 2.26.0_7oxhxpfrfa36wphljyp7zzorei
       glob: 7.2.3
       is-glob: 4.0.3
       resolve: 1.22.1
@@ -2018,7 +2047,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.4_zlc6foj3v7cayrv35otlm3epey:
+  /eslint-module-utils/2.7.4_oz5kojrn55dt7b4ppyb5j6qlai:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -2039,7 +2068,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.33.1_qugx7qdu5zevzvxaiqyxfiwquq
+      '@typescript-eslint/parser': 5.35.1_qugx7qdu5zevzvxaiqyxfiwquq
       debug: 3.2.7
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.6
@@ -2079,7 +2108,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.26.0_daixy6wwopwj32e3jzo4fx2moy:
+  /eslint-plugin-import/2.26.0_7oxhxpfrfa36wphljyp7zzorei:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -2089,14 +2118,14 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.33.1_qugx7qdu5zevzvxaiqyxfiwquq
+      '@typescript-eslint/parser': 5.35.1_qugx7qdu5zevzvxaiqyxfiwquq
       array-includes: 3.1.5
       array.prototype.flat: 1.3.0
       debug: 2.6.9
       doctrine: 2.1.0
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.4_zlc6foj3v7cayrv35otlm3epey
+      eslint-module-utils: 2.7.4_oz5kojrn55dt7b4ppyb5j6qlai
       has: 1.0.3
       is-core-module: 2.10.0
       is-glob: 4.0.3
@@ -2190,8 +2219,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-react/7.30.1_eslint@8.21.0:
-    resolution: {integrity: sha512-NbEvI9jtqO46yJA3wcRF9Mo0lF9T/jhdHqhCHXiXtD+Zcb98812wvokjWpU7Q4QH5edo6dmqrukxVvWWXHlsUg==}
+  /eslint-plugin-react/7.31.0_eslint@8.21.0:
+    resolution: {integrity: sha512-BWriBttYYCnfb4RO9SB91Og8uA9CPcBMl5UlCOCtuYW1UjhN3QypzEcEHky4ZIRZDKjbO2Blh9BjP8E7W/b1SA==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
@@ -2480,12 +2509,12 @@ packages:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
-      flatted: 3.2.6
+      flatted: 3.2.7
       rimraf: 3.0.2
     dev: true
 
-  /flatted/3.2.6:
-    resolution: {integrity: sha512-0sQoMh9s0BYsm+12Huy/rkKxVu4R1+r96YX5cG44rHV0pQ6iC3Q+mkoMFaGWObMFYQxCVT+ssG1ksneA2MI9KQ==}
+  /flatted/3.2.7:
+    resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
   /fs-extra/10.1.0:
@@ -3162,7 +3191,7 @@ packages:
     dependencies:
       '@next/env': 12.2.3
       '@swc/helpers': 0.4.3
-      caniuse-lite: 1.0.30001378
+      caniuse-lite: 1.0.30001383
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -3718,7 +3747,7 @@ packages:
     resolution: {integrity: sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==}
     dependencies:
       spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
   /spdx-exceptions/2.3.0:
@@ -3729,11 +3758,11 @@ packages:
     resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
     dependencies:
       spdx-exceptions: 2.3.0
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
-  /spdx-license-ids/3.0.11:
-    resolution: {integrity: sha512-Ctl2BrFiM0X3MANYgj3CkygxhRmr9mi6xhejbdO960nF6EDJApTYpn0BQnDKlnNBULKiCN1n3w9EBkHK8ZWg+g==}
+  /spdx-license-ids/3.0.12:
+    resolution: {integrity: sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==}
     dev: true
 
   /split2/3.2.2:
@@ -3900,7 +3929,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.9.1_z5yog5l5yqinvqran22gqy2vdi:
+  /ts-node/10.9.1_57uwcby55h6tzvkj3v5sfcgxoe:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -3919,7 +3948,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.7.6
+      '@types/node': 18.7.13
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3

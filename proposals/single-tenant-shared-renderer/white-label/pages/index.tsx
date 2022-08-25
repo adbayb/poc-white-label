@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Button } from "@framework/design-system";
-import { RedirectionLink } from "../components/TenantProxy";
+import { RedirectionLink } from "../components/BrandProxy";
 
 const Home: NextPage = () => {
 	return (

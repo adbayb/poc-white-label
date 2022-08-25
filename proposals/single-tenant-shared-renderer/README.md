@@ -1,6 +1,6 @@
 <div align="center">
     <h1>🧪 Single-tenant architecture proposal (with multi-tenant codebase)</h1>
-    <strong>One white-label infrastructure per tenant (a single software runtime serves a single customer) with a single shared renderer codebase</strong>
+    <strong>One white-label infrastructure per brand (a single software runtime serves a single customer) with a single shared renderer codebase</strong>
 </div>
 <br>
 <br>

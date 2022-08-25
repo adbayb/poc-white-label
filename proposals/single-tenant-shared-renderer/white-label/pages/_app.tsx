@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { Shell } from "../components/TenantProxy";
+import { Shell } from "../components/BrandProxy";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

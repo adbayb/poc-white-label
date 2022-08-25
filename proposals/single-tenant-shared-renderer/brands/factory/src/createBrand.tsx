@@ -9,12 +9,12 @@ import {
 } from "@framework/design-system";
 import { ReactElement, ReactNode } from "react";
 
-export type Contract = {
+export type ConsumptionContract = {
 	Shell: (props: { children: ReactNode }) => JSX.Element;
 	RedirectionLink: ReturnType<typeof createRedirectionLink>;
 };
 
-type Configuration = {
+type ConfigurationContract = {
 	title: string;
 	description: string;
 	theme: TokenValue;
@@ -22,7 +22,7 @@ type Configuration = {
 	redirectionLink: string;
 };
 
-export const createTenant = (configuration: Configuration): Contract => {
+export const createBrand = (configuration: ConfigurationContract): ConsumptionContract => {
 	const Layout = createLayout(configuration);
 	const RedirectionLink = createRedirectionLink(configuration);
 
@@ -51,7 +51,7 @@ interface LayoutProps {
 	children: ReactNode;
 }
 
-const createLayout = (configuration: Configuration) =>
+const createLayout = (configuration: ConfigurationContract) =>
 	function Layout({ children }: LayoutProps) {
 		return (
 			<View
@@ -69,7 +69,7 @@ const createLayout = (configuration: Configuration) =>
 
 type RedirectionLinkProps = Pick<LinkProps, "children">;
 
-const createRedirectionLink = (configuration: Configuration) =>
+const createRedirectionLink = (configuration: ConfigurationContract) =>
 	function RedirectionLink({ children }: RedirectionLinkProps) {
 		return <Link href={configuration.redirectionLink}>{children}</Link>;
 	};

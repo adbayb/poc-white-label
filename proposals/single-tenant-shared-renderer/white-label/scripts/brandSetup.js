@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const fsExtra = require("fs-extra");
 const path = require("path");
 
-const TENANT_ID = process.env.TENANT_ID;
+const BRAND_ID = process.env.BRAND_ID;
 
 prepare();
 
@@ -11,7 +11,7 @@ async function prepare() {
 }
 
 async function copyStaticFiles() {
-	const logLabel = `Copying tenant ("${TENANT_ID}") static files...`;
+	const logLabel = `Copying brand ("${BRAND_ID}") static files...`;
 
 	console.log(logLabel);
 
@@ -19,7 +19,7 @@ async function copyStaticFiles() {
 		// @section: clean next public folder
 		const srcDir = path.resolve(
 			require.resolve(
-				`@single-tenant-shared-renderer/white-label-tenant-${TENANT_ID}`
+				`@single-tenant-shared-renderer/white-label-brand-${BRAND_ID}`
 			),
 			"../../public"
 		);
@@ -32,7 +32,7 @@ async function copyStaticFiles() {
 			}
 		}
 
-		// @section copy tenant public files
+		// @section copy public files
 		await fsExtra.copy(srcDir, destDir, { overwrite: true });
 
 		console.log(`${logLabel} ✅`);

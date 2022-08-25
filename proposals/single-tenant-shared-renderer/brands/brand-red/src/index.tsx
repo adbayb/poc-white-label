@@ -1,7 +1,7 @@
 import { Typography, View } from "@framework/design-system";
-import { createTenant } from "@single-tenant-shared-renderer/white-label-tenant-factory";
+import { createBrand } from "@single-tenant-shared-renderer/white-label-brand-factory";
 
-export default createTenant({
+export default createBrand({
 	title: "brand-red",
 	description: "👋 from brand-red",
 	redirectionLink: "https://www.seloger.com/",
