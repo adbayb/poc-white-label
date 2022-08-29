@@ -11,7 +11,7 @@
   "dependencies": {
     "@framework/design-system": "workspace:*",
     "@single-tenant-separate-renderer/white-label-application": "workspace:*",
-    "@single-tenant-separate-renderer/white-label-bff": "workspace:*",
+    "@single-tenant-separate-renderer/white-label-backend-service": "workspace:*",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

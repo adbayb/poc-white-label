@@ -26,7 +26,7 @@ pnpm start:single-tenant-shared-renderer:brand-red
 
 ## 🏗 Architecture
 
-![Component diagram for single-tenant infrastructure with multi-tenant codebase](https://user-images.githubusercontent.com/10498826/186714313-caa9de76-c9fe-4df3-ae1a-562d98009bee.png)
+![Component diagram for single-tenant infrastructure with multi-tenant codebase](https://user-images.githubusercontent.com/10498826/187184597-d326509e-48e7-429b-b718-7139114efb11.png)
 
 <br>
 
