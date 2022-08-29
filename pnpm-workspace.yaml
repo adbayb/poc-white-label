@@ -1,5 +1,6 @@
 packages:
   - "dependencies/*"
-  - "proposals/client-side-integration/*"
+  - "proposals/client-side-integration/brands/*"
+  - "proposals/client-side-integration/white-label"
   - "proposals/server-side-integration/brands/*"
   - "proposals/server-side-integration/white-label"

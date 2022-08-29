@@ -28,4 +28,4 @@ pnpm start:client-side-integration:brand-red
 
 Chosen technology: [Single-spa](https://single-spa.js.org/) (micro-frontend client-side orchestrator framework).
 
-![Component diagram](https://user-images.githubusercontent.com/10498826/186856162-b9907924-3bb7-400e-812a-a7fc653cdaca.png)
+![Component diagram](https://user-images.githubusercontent.com/10498826/187178593-9dba0ea5-9f24-40ce-a846-b85ef60e376d.png)

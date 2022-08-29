@@ -45,22 +45,18 @@ Let's zoom more specifically into the white-label integration system by enumerat
 - **Shell**: The white-label integration orchestrator. By nature, the shell is tightly coupled to the brand (each brand has its own shell) and the white label (the relationship between the shell for a given brand and the white label is always one-to-one). Its main responsibility is to welcome, in the best conditions, a white label inside a brand (ie. decorating it with brand-aware configuration and assets)
 - **Renderer**: Manage the white-label rendering strategy (including server-side rendering and client-side bootstrapping/hydration)
 - **Application**: The front-end application implementing the core business logic (shared across brands)
-- **BFF (Backend For Frontend)**: The custom-fitted backend service for the white-label application. It optimizes the way data are retrieved from external services and transformed/served to match white-label needs
+- **Back-end service**: The custom-fitted back-end service for the white-label application. To optimize data retrieval on a per client basis, the back-end service can have in front of it one BFF (Backend For Frontend) per client if each consumer has different presentation needs
 
 To sum up, the high-level integration design shared between proposals can be visualized via the following [C4 model](https://c4model.com/):
 
-![Overview](https://user-images.githubusercontent.com/10498826/186437351-03c2960b-c593-45c5-8c49-758292de3527.png)
+![Overview](https://user-images.githubusercontent.com/10498826/187178599-61a43567-deab-4c4c-b224-072a486f89e0.png)
 
 ### Proposals
 
-TODO:
-
-- Update confluence / miro link (+ split client / server integration inside integration confluence page to include for each one the github folder)
-
 To explore white-labelling challenges, two integration scenarios have been identified:
 
-- [Client-side integration](proposals/client-side-integration): TODO
-- [Server-side integration](proposals/server-side-integration): TODO
+- **[Client-side integration](proposals/client-side-integration)**: Client-side rendered white-label integration ([single-page application approach](https://rubygarage.org/blog/single-page-app-vs-multi-page-app#article_title_1) to support a smooth user experience with hassle-free infrastructure management)
+- **[Server-side integration](proposals/server-side-integration)**: Server-side rendered white-label integration ([multi-page application approach](https://rubygarage.org/blog/single-page-app-vs-multi-page-app#article_title_12) to support SEO constraint)
 
 <br>
 

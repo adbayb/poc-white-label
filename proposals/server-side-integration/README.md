@@ -28,11 +28,11 @@ pnpm start:server-side-integration:brand-red
 
 Chosen technology: [Next.js](https://nextjs.org/) (server-side React framework).
 
-![Component diagram](https://user-images.githubusercontent.com/10498826/186856180-01714fc8-90fe-4003-a18f-388cbf4a1ad4.png)
+![Component diagram](https://user-images.githubusercontent.com/10498826/187178585-38eadda1-8103-4c07-b528-4591a9cec7e7.png)
 
 <br>
 
 ## 🚧 Other alternatives
 
-While iterating on this solution, several options have been explored (including single-tenant vs multi-tenant solutions and pros/cons for each one).
-You can find all the server-side preliminary work inside [this branch](https://github.com/adbayb/poc-white-label/tree/server-side-alternatives).
+While iterating on this solution, several options have been explored (including single-tenant vs multi-tenant solutions with pros/cons for each one).
+You can find all the server-side preliminary work [here](https://github.com/adbayb/poc-white-label/tree/server-side-alternatives).
