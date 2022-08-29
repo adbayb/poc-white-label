@@ -26,6 +26,6 @@ pnpm start:client-side-integration:brand-red
 
 ## 🏗 Architecture
 
-Chosen technology: [Single-spa](https://single-spa.js.org/) (micro-frontend client-side orchestrator framework).
+Chosen technology: [Single-spa](https://single-spa.js.org/) (micro-frontend client-side orchestrator framework) and [module federation](https://module-federation.github.io/) (run-time dependency manager).
 
 ![Component diagram](https://user-images.githubusercontent.com/10498826/187178593-9dba0ea5-9f24-40ce-a846-b85ef60e376d.png)
