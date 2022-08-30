@@ -1,6 +1,7 @@
 {
 	"name": "@client-side-integration/shared",
 	"private": true,
+	"version": "0.0.0",
 	"source": "src/index.tsx",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.mjs",
