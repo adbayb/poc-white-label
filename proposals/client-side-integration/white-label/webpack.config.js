@@ -34,7 +34,7 @@ module.exports = {
 			library: { type: "var", name: "white_label" },
 			filename: "remoteEntry.js",
 			exposes: {
-				"./Renderer": "./src/Renderer",
+				"./renderer": "./src/renderer",
 			},
 			shared: [...Object.keys(pkgDependencies), "react/jsx-runtime"].reduce(
 				(shared, moduleName) => {

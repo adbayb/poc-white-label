@@ -1,3 +1,1 @@
-import("./bootstrap");
-
-export {};
+import("./renderer");
