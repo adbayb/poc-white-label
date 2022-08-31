@@ -4,7 +4,6 @@ import type { ConfigurationContract } from "@client-side-integration/white-label
 
 registerApplication<ConfigurationContract>({
 	name: "brand-red",
-	// @ts-expect-error todo fix
 	app: () => import("white_label/renderer"),
 	activeWhen: ["/"],
 	customProps: {
