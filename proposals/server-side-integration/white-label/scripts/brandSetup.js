@@ -18,9 +18,7 @@ async function copyStaticFiles() {
 	try {
 		// @section: clean next public folder
 		const srcDir = path.resolve(
-			require.resolve(
-				`@single-tenant-shared-renderer/white-label-brand-${BRAND_ID}`
-			),
+			require.resolve(`@server-side-integration/${BRAND_ID}`),
 			"../../public"
 		);
 		const destDir = "./public";

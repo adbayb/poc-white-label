@@ -1,4 +1,4 @@
-import { createBrand } from "@single-tenant-shared-renderer/white-label-brand-factory";
+import { createBrand } from "@server-side-integration/brand-factory";
 
 export default createBrand({
 	title: "brand-blue",
