@@ -1,6 +1,7 @@
 {
 	"name": "@framework/design-system",
 	"private": true,
+	"version": "0.1.0",
 	"source": "src/index.ts",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.mjs",

@@ -13,15 +13,18 @@
 	},
 	"devDependencies": {
         "@framework/design-system": "workspace:*",
+		"@types/react-helmet": "6.1.5",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+		"react-helmet": "6.1.0",
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
 		"@framework/design-system": "workspace:*",
 		"react": ">=18.0.0",
-        "react-dom": ">=18.0.0"
+        "react-dom": ">=18.0.0",
+		"react-helmet": ">=6.0.0"
 	}
 }

@@ -8,8 +8,6 @@ export const Shell = () => {
 		<BrandFactory
 			title="brand-blue"
 			description="👋 from brand-blue"
-			footer={null}
-			redirectionLink="https://www.meilleursagents.com"
 			theme={Object.freeze({
 				colors: Object.freeze({
 					"accent-primary": "#3a55d6",

@@ -1,7 +1,7 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
+import { Helmet } from "react-helmet";
 import {
 	DesignSystemProvider,
-	Link,
 	TokenValue,
 	Typography,
 	View,
@@ -10,8 +10,6 @@ import {
 interface BrandFactoryProps {
 	children: ReactNode;
 	description: string;
-	footer: ReactElement | null;
-	redirectionLink: string;
 	theme: TokenValue;
 	title: string;
 }
@@ -19,20 +17,18 @@ interface BrandFactoryProps {
 export const BrandFactory = ({
 	children,
 	description,
-	footer,
-	redirectionLink,
 	theme,
-}: // title,
-BrandFactoryProps) => {
+	title,
+}: BrandFactoryProps) => {
 	return (
 		<>
-			{/* <Head>
+			<Helmet>
 				<title>{title}</title>
 				<meta
 					name="description"
 					content={description}
 				/>
-			</Head> */}
+			</Helmet>
 			<DesignSystemProvider theme={theme}>
 				<View
 					as="main"
@@ -42,8 +38,6 @@ BrandFactoryProps) => {
 				>
 					<Typography size="text-48">{description}</Typography>
 					{children}
-					<Link href={redirectionLink}>Redirect me!</Link>
-					{footer}
 				</View>
 			</DesignSystemProvider>
 		</>
