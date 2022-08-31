@@ -1,8 +1,8 @@
 {
-	"name": "@client-side-integration/shared",
+	"name": "@client-side-integration/brand-factory",
 	"private": true,
-	"version": "0.0.0",
-	"source": "src/index.tsx",
+	"version": "0.1.0",
+	"source": "src/index.ts",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -12,6 +12,7 @@
 		"build": "quickbundle build"
 	},
 	"devDependencies": {
+        "@framework/design-system": "workspace:*",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
         "react": "18.2.0",
@@ -19,6 +20,7 @@
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
+		"@framework/design-system": "workspace:*",
 		"react": ">=18.0.0",
         "react-dom": ">=18.0.0"
 	}

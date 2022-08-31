@@ -1,7 +1,7 @@
 {
   "name": "@client-side-integration/brand-blue",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "start": "webpack serve --mode development --open",
 		"build": "webpack --mode production",
@@ -10,8 +10,8 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@client-side-integration/white-label": "workspace:*",
-    "@client-side-integration/shared": "workspace:*"
+    "@client-side-integration/brand-factory": "workspace:*",
+    "@client-side-integration/white-label": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "18.0.17",

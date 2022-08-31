@@ -2,7 +2,7 @@
 	"name": "monorepo-poc-white-label",
 	"description": "White-label solution proposals",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"author": {
 		"name": "Ayoub Adib",
 		"email": "adbayb@gmail.com",

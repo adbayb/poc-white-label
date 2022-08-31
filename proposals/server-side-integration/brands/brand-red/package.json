@@ -1,6 +1,7 @@
 {
 	"name": "@server-side-integration/brand-red",
 	"private": true,
+	"version": "0.1.0",
 	"source": "src/index.tsx",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.mjs",
