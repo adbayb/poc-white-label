@@ -12,8 +12,8 @@
 		"build": "quickbundle build"
 	},
 	"devDependencies": {
-        "@framework/design-system": "workspace:*",
-        "@server-side-integration/brand-factory": "workspace:*",
+        "@framework/design-system": "0.1.0",
+        "@server-side-integration/brand-factory": "0.1.0",
 		"@types/react": "18.0.15",
 		"@types/react-dom": "18.0.6",
         "next": "12.2.3",
@@ -22,8 +22,8 @@
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
-        "@framework/design-system": "workspace:*",
-		"@server-side-integration/brand-factory": "workspace:*",
+        "@framework/design-system": "0.1.0",
+		"@server-side-integration/brand-factory": "0.1.0",
         "next": ">=12.0.0",
 		"react": ">=18.0.0",
         "react-dom": ">=18.0.0"

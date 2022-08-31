@@ -10,10 +10,10 @@
     "verify": "next lint"
   },
   "dependencies": {
-    "@framework/design-system": "workspace:*",
-    "@server-side-integration/brand-blue": "workspace:*",
-    "@server-side-integration/brand-red": "workspace:*",
-    "@server-side-integration/brand-factory": "workspace:*",
+    "@framework/design-system": "0.1.0",
+    "@server-side-integration/brand-blue": "0.1.0",
+    "@server-side-integration/brand-red": "0.1.0",
+    "@server-side-integration/brand-factory": "0.1.0",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -11,8 +11,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-helmet": "6.1.0",
-    "@client-side-integration/brand-factory": "workspace:*",
-    "@client-side-integration/white-label": "workspace:*"
+    "@client-side-integration/brand-factory": "0.1.0",
+    "@client-side-integration/white-label": "0.1.0"
   },
   "devDependencies": {
     "@types/react": "18.0.17",
