@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "@client-side-integration/white-label": "0.1.0",
-    "@framework/design-system": "*",
+    "@framework/design-system": "0.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "single-spa": "5.9.4"
   },
   "devDependencies": {
-    "@types/react": "18.0.17",
+    "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
 		"html-webpack-plugin": "5.5.0",
 		"serve": "14.0.1",
