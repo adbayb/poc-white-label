@@ -24,10 +24,9 @@
 		"fix": "turbo run fix",
 		"test": "turbo run test",
 		"build": "turbo run build",
+		"start:client-side-integration": "turbo run start --filter=@client-side-integration/* --filter=@framework/*",
 		"start:server-side-integration:brand-blue": "BRAND_ID=brand-blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
-		"start:server-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
-		"start:client-side-integration:brand-blue": "BRAND_ID=brand-blue PORT=3000 turbo run start --filter=@client-side-integration/* --filter=@framework/*",
-		"start:client-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@client-side-integration/* --filter=@framework/*"
+		"start:server-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
 	},
 	"devDependencies": {
 		"@adbayb/scripts": "0.14.0",

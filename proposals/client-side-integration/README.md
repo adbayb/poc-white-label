@@ -16,10 +16,7 @@ pnpm i
 2️⃣ Try it by running from the monorepo root folder:
 
 ```bash
-# For the `brand-blue` application:
-pnpm start:client-side-integration:brand-blue
-# For the `brand-red` application:
-pnpm start:client-side-integration:brand-red
+pnpm start:client-side-integration
 ```
 
 <br>

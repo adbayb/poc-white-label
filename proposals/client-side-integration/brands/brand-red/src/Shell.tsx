@@ -1,19 +1,35 @@
 import { registerApplication, start } from "single-spa";
+import { Typography, View } from "@framework/design-system";
 import type { ConfigurationContract } from "@client-side-integration/white-label";
 
 registerApplication<ConfigurationContract>({
-	name: "brand-blue",
+	name: "brand-red",
 	// @ts-expect-error todo fix
 	app: () => import("white_label/renderer"),
 	activeWhen: ["/"],
 	customProps: {
-		title: "brand-blue",
-		description: "👋 from brand-blue",
-		redirectionLink: "https://www.meilleursagents.com/",
+		title: "brand-red",
+		description: "👋 from brand-red",
+		redirectionLink: "https://www.seloger.com/",
+		footer: (
+			<View
+				as="footer"
+				position="fixed"
+				bottom={0}
+				left={0}
+				right={0}
+				height={100}
+				backgroundColor="accent-secondary"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<Typography variation="strong">Footer</Typography>
+			</View>
+		),
 		theme: Object.freeze({
 			colors: Object.freeze({
-				"accent-primary": "#3a55d6",
-				"accent-secondary": "#dae1ff",
+				"accent-primary": "#be3333",
+				"accent-secondary": "#fddddd",
 				"neutral-white": "#ffffff",
 				"neutral-black": "#000000",
 			}),

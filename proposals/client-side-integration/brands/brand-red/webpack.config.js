@@ -3,7 +3,7 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const pkgDependencies = require("./package.json").dependencies;
 
-const PORT = 3000;
+const PORT = 3001;
 
 module.exports = {
 	entry: {
@@ -32,8 +32,8 @@ module.exports = {
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: "brand-blue",
-			library: { type: "var", name: "brand-blue" },
+			name: "brand-red",
+			library: { type: "var", name: "brand-red" },
 			remotes: ["white_label"],
 			shared: [...Object.keys(pkgDependencies), "react/jsx-runtime"].reduce(
 				(shared, name) => {

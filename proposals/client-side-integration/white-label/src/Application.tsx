@@ -10,6 +10,7 @@ import type { ConfigurationContract } from "../types/Contract";
 
 export const Application = ({
 	description,
+	footer,
 	redirectionLink,
 	theme,
 	title,
@@ -37,6 +38,7 @@ export const Application = ({
 					Click me!
 				</Button>
 				<Link href={redirectionLink}>Redirect me!</Link>
+				{footer}
 			</View>
 		</DesignSystemProvider>
 	);

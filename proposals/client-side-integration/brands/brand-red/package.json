@@ -1,24 +1,22 @@
 {
-  "name": "@client-side-integration/white-label",
+  "name": "@client-side-integration/brand-red",
   "private": true,
   "version": "0.1.0",
-  "types": "./types/Contract.ts",
   "scripts": {
-		"start": "webpack serve --mode development",
+    "start": "webpack serve --mode development --open",
 		"build": "webpack --mode production",
-		"serve": "serve dist -p $PORT"
+		"serve": "serve dist -p 3001"
   },
   "dependencies": {
-    "@framework/design-system": "0.1.0",
+    "@client-side-integration/white-label": "0.1.0",
+    "@framework/design-system": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-helmet": "6.1.0",
-    "single-spa-react": "5.0.0"
+    "single-spa": "5.9.4"
   },
   "devDependencies": {
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@types/react-helmet": "6.1.5",
 		"html-webpack-plugin": "5.5.0",
 		"serve": "14.0.1",
 		"ts-loader": "9.3.1",
