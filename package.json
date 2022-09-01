@@ -1,45 +1,45 @@
 {
-	"name": "monorepo-poc-white-label",
-	"description": "White-label solution proposals",
-	"private": true,
-	"version": "0.1.0",
-	"author": {
-		"name": "Ayoub Adib",
-		"email": "adbayb@gmail.com",
-		"url": "https://twitter.com/adbayb"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/adbayb/poc-white-label.git"
-	},
-	"bugs": {
-		"url": "https://github.com/adbayb/poc-white-label/issues"
-	},
-	"homepage": "https://github.com/adbayb/poc-white-label#readme",
-	"license": "MIT",
-	"scripts": {
-		"postinstall": "scripts setup",
-		"clean": "turbo run clean",
-		"verify": "turbo run verify",
-		"fix": "turbo run fix",
-		"test": "turbo run test",
-		"build": "turbo run build",
-		"start:client-side-integration": "turbo run start --filter=@client-side-integration/* --filter=@framework/*",
-		"start:server-side-integration:brand-blue": "BRAND_ID=brand-blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
-		"start:server-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
-	},
-	"devDependencies": {
-		"@adbayb/scripts": "0.14.0",
-		"@originjs/vite-plugin-federation": "1.1.9",
-		"turbo": "1.4.3",
-		"typescript": "4.7.4"
-	},
-	"prettier": "@adbayb/prettier-config",
-	"eslintConfig": {
-		"extends": "@adbayb",
-		"root": true,
-		"rules": {
-			"import/no-default-export": "off"
-		}
-	}
+  "name": "monorepo-poc-white-label",
+  "description": "White-label solution proposals",
+  "private": true,
+  "version": "0.1.0",
+  "author": {
+    "name": "Ayoub Adib",
+    "email": "adbayb@gmail.com",
+    "url": "https://twitter.com/adbayb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adbayb/poc-white-label.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adbayb/poc-white-label/issues"
+  },
+  "homepage": "https://github.com/adbayb/poc-white-label#readme",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "scripts setup",
+    "clean": "turbo run clean",
+    "verify": "turbo run verify",
+    "fix": "turbo run fix",
+    "test": "turbo run test",
+    "build": "turbo run build",
+    "start:client-side-integration": "turbo run start --filter=@client-side-integration/* --filter=@framework/*",
+    "start:server-side-integration:brand-blue": "BRAND_ID=brand-blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
+    "start:server-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
+  },
+  "devDependencies": {
+    "@adbayb/scripts": "0.14.0",
+    "@originjs/vite-plugin-federation": "1.1.9",
+    "turbo": "1.4.3",
+    "typescript": "4.7.4"
+  },
+  "prettier": "@adbayb/prettier-config",
+  "eslintConfig": {
+    "extends": "@adbayb",
+    "root": true,
+    "rules": {
+      "import/no-default-export": "off"
+    }
+  }
 }

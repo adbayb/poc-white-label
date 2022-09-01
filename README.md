@@ -62,4 +62,5 @@ To explore white-labelling challenges, two integration scenarios have been ident
 
 ## 📕 Resources
 
+- [Micro frontends](https://github.com/adbayb/poc-micro-frontend)
 - [Single- vs Multi-tenant white-label applications](https://stormotion.io/blog/how-to-build-a-white-label-app/#single-multi-tenancy-apps)
