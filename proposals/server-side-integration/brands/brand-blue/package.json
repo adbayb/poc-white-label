@@ -11,21 +11,21 @@
     "start": "quickbundle watch",
     "build": "quickbundle build"
   },
-  "devDependencies": {
-    "@framework/design-system": "0.1.0",
-    "@server-side-integration/brand-factory": "0.1.0",
-    "@types/react": "18.0.18",
-    "@types/react-dom": "18.0.6",
-    "next": "12.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.7.4"
-  },
   "peerDependencies": {
     "@framework/design-system": ">=0.1.0",
     "@server-side-integration/brand-factory": ">=0.1.0",
     "next": ">=12.0.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@framework/design-system": "0.1.0",
+    "@server-side-integration/brand-factory": "0.1.0",
+    "@types/react": "18.0.38",
+    "@types/react-dom": "18.0.11",
+    "next": "13.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.4"
   }
 }
