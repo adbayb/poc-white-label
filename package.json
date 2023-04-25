@@ -24,8 +24,8 @@
     "fix": "scripts fix",
     "build": "turbo run build",
     "start:client-side-integration": "turbo run start --filter=@client-side-integration/* --filter=@framework/*",
-    "start:server-side-integration:brand-blue": "pnpm clean && cross-env BRAND_ID=blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
-    "start:server-side-integration:brand-red": "pnpm clean && cross-env BRAND_ID=red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
+    "start:server-side-integration:brand-blue": "cross-env BRAND_ID=blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
+    "start:server-side-integration:brand-red": "cross-env BRAND_ID=red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
   },
   "devDependencies": {
     "@adbayb/scripts": "0.14.0",
