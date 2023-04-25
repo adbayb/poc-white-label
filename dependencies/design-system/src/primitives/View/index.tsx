@@ -52,7 +52,7 @@ export const View = forwardRef<ViewRef, ViewProps>(function View(
 		id,
 	};
 
-	if (isValidElement(Element)) {
+	if (isValidElement<any>(Element)) {
 		return cloneElement(Element, {
 			...commonProps,
 			className: styles,

@@ -18,8 +18,8 @@ async function copyStaticFiles() {
 	try {
 		// @section: clean next public folder
 		const srcDir = path.resolve(
-			require.resolve(`@server-side-integration/${BRAND_ID}`),
-			"../../public"
+			require.resolve(`@server-side-integration/shell`),
+			`../../src/brands/${BRAND_ID}/public`
 		);
 		const destDir = "./public";
 		const srcFiles = await fs.readdir(destDir);

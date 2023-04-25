@@ -2,7 +2,7 @@
   "name": "monorepo-poc-white-label",
   "description": "White-label solution proposals",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "author": {
     "name": "Ayoub Adib",
     "email": "adbayb@gmail.com",
@@ -19,17 +19,20 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "scripts setup",
-    "clean": "turbo run clean",
-    "verify": "turbo run verify",
-    "fix": "turbo run fix",
-    "test": "turbo run test",
+    "clean": "scripts clean && rm -rf node_modules/.cache",
+    "verify": "scripts verify",
+    "fix": "scripts fix",
     "build": "turbo run build",
     "start:client-side-integration": "turbo run start --filter=@client-side-integration/* --filter=@framework/*",
-    "start:server-side-integration:brand-blue": "BRAND_ID=brand-blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
-    "start:server-side-integration:brand-red": "BRAND_ID=brand-red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
+    "start:server-side-integration:brand-blue": "pnpm clean && cross-env BRAND_ID=blue PORT=3000 turbo run start --filter=@server-side-integration/* --filter=@framework/*",
+    "start:server-side-integration:brand-red": "pnpm clean && cross-env BRAND_ID=red PORT=3001 turbo run start --filter=@server-side-integration/* --filter=@framework/*"
   },
   "devDependencies": {
     "@adbayb/scripts": "0.14.0",
+    "@parcel/transformer-typescript-types": "2.8.3",
+    "@parcel/packager-ts": "2.8.3",
+    "cross-env": "7.0.3",
+    "parcel": "2.8.3",
     "turbo": "1.9.3",
     "typescript": "5.0.4"
   },

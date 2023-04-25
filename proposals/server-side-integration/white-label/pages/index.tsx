@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { Button } from "@framework/design-system";
-import { RedirectionLink } from "../components/BrandProxy";
+import { Button, Link } from "@framework/design-system";
+import { configuration } from "@server-side-integration/shell";
 
 const Home: NextPage = () => {
 	return (
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 			>
 				Click me!
 			</Button>
-			<RedirectionLink>Redirect me!</RedirectionLink>
+			<Link href={configuration.redirectionLink}>Redirect me!</Link>
 		</>
 	);
 };

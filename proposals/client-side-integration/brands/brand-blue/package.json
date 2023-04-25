@@ -1,15 +1,15 @@
 {
   "name": "@client-side-integration/brand-blue",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "@client-side-integration/white-label": "^0.1.0",
-    "@framework/design-system": "^0.1.0",
+    "@client-side-integration/white-label": "^0.0.0",
+    "@framework/design-system": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "single-spa": "^5.9.4"

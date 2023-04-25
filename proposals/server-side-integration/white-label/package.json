@@ -1,19 +1,16 @@
 {
   "name": "@server-side-integration/white-label",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "next dev -p $PORT",
+    "start": "next dev -p \"$PORT\"",
     "prestart": "node ./scripts/brandSetup.js",
     "build": "next build",
-    "serve": "next start -p $PORT",
-    "verify": "next lint"
+    "serve": "next start -p \"$PORT\""
   },
   "dependencies": {
-    "@framework/design-system": "^0.1.0",
-    "@server-side-integration/brand-blue": "^0.1.0",
-    "@server-side-integration/brand-red": "^0.1.0",
-    "@server-side-integration/brand-factory": "^0.1.0",
+    "@framework/design-system": "^0.0.0",
+    "@server-side-integration/shell": "^0.0.0",
     "next": "^13.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -22,8 +19,6 @@
     "@types/node": "18.16.0",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.3.1",
     "fs-extra": "11.1.1",
     "typescript": "5.0.4"
   }

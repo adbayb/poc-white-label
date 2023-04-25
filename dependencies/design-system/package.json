@@ -1,15 +1,16 @@
 {
   "name": "@framework/design-system",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "source": "src/index.ts",
-  "main": "dist/index.cjs.js",
+  "type": "module",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "quickbundle watch",
-    "build": "quickbundle build"
+    "start": "parcel watch -p 1234",
+    "build": "parcel build"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -19,10 +20,10 @@
     "coulis": "0.3.0"
   },
   "devDependencies": {
-    "@types/react": "18.0.18",
-    "@types/react-dom": "18.0.6",
+    "@types/react": "18.0.38",
+    "@types/react-dom": "18.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.7.4"
+    "typescript": "5.0.4"
   }
 }

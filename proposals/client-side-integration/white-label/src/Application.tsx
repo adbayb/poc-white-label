@@ -6,7 +6,7 @@ import {
 	Typography,
 	View,
 } from "@framework/design-system";
-import type { ConfigurationContract } from "../types/Contract";
+import type { Api } from "./types";
 
 export const Application = ({
 	description,
@@ -14,7 +14,7 @@ export const Application = ({
 	redirectionLink,
 	theme,
 	title,
-}: ConfigurationContract) => {
+}: Api) => {
 	return (
 		<DesignSystemProvider theme={theme}>
 			<Helmet>

@@ -1,8 +1,8 @@
 import { registerApplication, start } from "single-spa";
 import { Typography, View } from "@framework/design-system";
-import type { ConfigurationContract } from "@client-side-integration/white-label";
+import type { Api } from "@client-side-integration/white-label";
 
-registerApplication<ConfigurationContract>({
+registerApplication<Api>({
 	name: "brand-red",
 	app: () => import("white_label/renderer"),
 	activeWhen: ["/"],
